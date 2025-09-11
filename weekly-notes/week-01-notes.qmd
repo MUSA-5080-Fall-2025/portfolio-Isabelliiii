@@ -4,20 +4,20 @@ date: "2025-09-08"
 ---
 
 ## Key Concepts Learned
-- [List main concepts from lecture]
-- [Technical skills covered]
+- Set up portfolio
+- R,quarto,github
 
 ## Coding Techniques
-- [New R functions or approaches]
-- [Quarto features learned]
+- Basic setting up skill
+- How to render and push
 
 ## Questions & Challenges
-- [What I didn't fully understand]
-- [Areas needing more practice]
+- Which file I should go to when I make changes
+- The whole process of making changes
 
 ## Connections to Policy
-- [How this week's content applies to real policy work]
+- Upload my work to my portfolio for visualization
 
 ## Reflection
-- [What was most interesting]
-- [How I'll apply this knowledge]
+- How different platform can connect and work with each other
+- I want to practice more and dig deeper
