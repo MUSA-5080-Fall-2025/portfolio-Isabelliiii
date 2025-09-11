@@ -5,13 +5,7 @@ date: "2025-09-08"
 
 ## Key Concepts Learned
 - [List main concepts from lecture]
-GitHub and portfolio setup
-Getting to know R
 - [Technical skills covered]
-Repository (repo): Folder containing project files
-Commit: Snapshot the work at a point in time
-Push: Send changes to GitHub cloud
-Pull: Get latest changes from GitHub cloud
 
 ## Coding Techniques
 - [New R functions or approaches]

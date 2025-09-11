@@ -15,8 +15,8 @@ Advanced spatial analysis and data science for urban planning and public policy.
 - **Final Project:** Capstone modeling challenge
 
 ## About Me
-I recently graduated from University of Toronto with an Honours Bachelor of Science in Mathematics and Economics.I am currently pursuing a Master of Urban Spatial Analytics at the University of Pennsylvania.
+[Students will customize this section]
 
 ## Contact
-- Email: [isablil@upenn.edu]
-- GitHub: [@isabelliii]
+- Email: [your.email@upenn.edu]
+- GitHub: [@your-username]
