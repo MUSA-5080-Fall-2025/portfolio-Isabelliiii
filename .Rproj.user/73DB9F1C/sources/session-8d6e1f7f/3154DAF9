@@ -3,24 +3,24 @@
     "path": "~/GitHub/portfolio-setup-Isabelliiii/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "2782981728",
     "contents": "",
-    "dirty": false,
+    "dirty": true,
     "created": 1757351801287.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "24,0",
-        "scrollLine": "0"
+        "cursorPosition": "25,7",
+        "scrollLine": "1"
     },
     "folds": "",
-    "lastKnownWriteTime": 1757604350,
+    "lastKnownWriteTime": 1757966883,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1757604350,
+    "last_content_update": 1757966926480,
     "read_only": false,
     "read_only_alternatives": []
 }

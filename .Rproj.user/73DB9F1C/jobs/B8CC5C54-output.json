@@ -47,3 +47,5 @@
 [1,"pandoc \n  to: html\n  output-file: lab0_template.html\n  standalone: true\n  title-prefix: Isabelle Li - MUSA 5080 Portfolio\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  toc: true\n  variables: {}\n  \nmetadata\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  theme: cosmo\n  title: 'Lab 0: Getting Started with dplyr'\n  subtitle: Your First Data Analysis\n  author: Isabelle Li\n  date: today\n  toc-location: left\n  \n"]
 [1,"Output created: ..\\..\\..\\docs\\Labs\\lab_0\\scripts\\lab0_template.html\n\nWatching files for changes\n"]
 [1,"GET: /Labs/lab_0/scripts/lab0_template.html\n"]
+[1,"GET: /Labs/lab_0/scripts/lab0_template.html\n"]
+[1,"ERROR: YAMLException: duplicated mapping key (C:\\Users\\dell\\Documents\\GitHub\\portfolio-setup-Isabelliiii\\_quarto.yml, 19:9)\n18:           text: \"Week 2\"\n19:         menu: \n           ~~\n20:           - href: Labs/\n"]
