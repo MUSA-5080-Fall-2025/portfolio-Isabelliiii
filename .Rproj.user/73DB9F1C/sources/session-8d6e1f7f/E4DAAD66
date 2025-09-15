@@ -3,24 +3,24 @@
     "path": "~/GitHub/portfolio-setup-Isabelliiii/weekly-notes/week-02-notes.qmd",
     "project_path": "weekly-notes/week-02-notes.qmd",
     "type": "quarto_markdown",
-    "hash": "3502206681",
+    "hash": "559129096",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1757951922348.0,
     "source_on_save": false,
     "relative_order": 5,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "9,0",
-        "scrollLine": "0"
+        "cursorPosition": "46,2",
+        "scrollLine": "22"
     },
     "folds": "",
-    "lastKnownWriteTime": 1757603722,
+    "lastKnownWriteTime": 1757956519,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1757952734882,
+    "last_content_update": 1757956519972,
     "read_only": false,
     "read_only_alternatives": []
 }
