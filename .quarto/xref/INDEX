@@ -16,5 +16,8 @@
   },
   "labs/lab_0/scripts/lab0_template.qmd": {
     "lab0_template.html": "4ee2d947"
+  },
+  "assignments/assignment1/assignment1_template.qmd": {
+    "assignment1_template.html": "f9b288e9"
   }
 }
