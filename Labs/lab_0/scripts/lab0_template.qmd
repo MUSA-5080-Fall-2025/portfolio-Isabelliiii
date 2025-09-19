@@ -116,7 +116,7 @@ names(car_data)
 
 **Question:** Why did we need backticks around `Year of manufacture` but not around `year`?
 
-**Your answer:** [YOUR ANSWER]
+**Your answer:** There's no space in between
 
 # Exercise 3: Creating New Columns
 
@@ -124,7 +124,7 @@ names(car_data)
 
 ```{r calculate-age}
 # Create an 'age' column (2025 minus year of manufacture)
-
+car_data <- car_data %>%
 
 # Create a mileage_per_year column  
 
