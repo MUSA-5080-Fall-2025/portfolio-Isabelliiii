@@ -1,23 +1,70 @@
 ---
-title: "Week 3 Notes - "
+title: "Week 3 Notes - Data Visualization & Exploratory Analysis "
 date: "2025-09-22"
 ---
 
 ## Key Concepts Learned
-- Set up portfolio
-- R,quarto,github
+Quartet: Datasets with identical summary statistics, but completely different patterns when visualized.
 
-## Coding Techniques
-- Basic setting up skill
-- How to render and push
+### The policy Implications
+why it matters
+- Summary statistics can hide critical patterns
+- Outliers may represent important communities
+- Relationships aren’t always linear
+- Visual inspection reveals data quality issues
 
-## Questions & Challenges
-- Which file I should go to when I make changes
-- The whole process of making changes
+### Bad Visualizations Consequences
+Common problems in government data presentation:
+- Misleading scales or axes
+- Cherry-picked time periods
+- Hidden or ignored uncertainty
+- Missing context about data reliability
 
-## Connections to Policy
-- Upload my work to my portfolio for visualization
+The smaller your sample size is, the larger your margin of error would be
+
+## Grammar of Graphics
+### The ggplot2 Philosophy
+principles: Data-Aesthetics-Geometries-Visual
+Data: Your data set (census data, survey responses, etc.)"I would like to make a plot"
+coding:g-ggplot(data=your_data)
+
+Aesthetics: What variables map to visual properties (x, y, color, size) how to draw a connection to specific element in our plot
+coding: aes(x=variable 1,y=variable 2)
+x, y - position
+color - point/line color
+fill - area fill color
+size - point/line size
+shape - point shape
+alpha - transparency
+
+Geometries: How to display the data (points, bars, lines)
+coding:geom_something()
+
+Additional layers: Scales, themes, facets, annotations
+coding:additional_layers()
+BUILD PLOTS BY ADDING LAYERS WITH +
+
+#### Understand your data before making decisions or building models
+- What does the data look like? (distributions, missing values)
+- What patterns exist? (relationships, clusters, trends)
+- What’s unusual? (outliers, anomalies, data quality issues)
+- What questions does this raise? (hypotheses for further investigation)
+- How reliable is this data
+
+#### Enhanced process for policy analysis
+1. Load and inspect - dimensions, variable types, missing data
+2. Assess reliability - examine margins of error, calculate coefficients of variation
+3. Visualize distributions - histograms, boxplots for each variable
+4. Explore relationships - scatter plots, correlations
+5. Identify patterns - grouping, clustering, geographical patterns
+6. Question anomalies - investigate outliers and unusual patterns
+7. Document limitations - prepare honest communication about data quality
+
+
+## Questions & Answers
+Q: Why do algorithmic decision-making systems rely on "proxy" variables?
+A: Because the data we want to measure directly is often unavailable or difficult to collect.
+
 
 ## Reflection
-- How different platform can connect and work with each other
-- I want to practice more and dig deeper
+

@@ -26,6 +26,8 @@ website:
             text: "All labs"
           - href: labs/lab_0/scripts/lab0_template.qmd
             text: "lab 0"
+          - href: labs/lab_1/week-03/scrips/week3_lab_exercise.qmd
+            text: "lab 1"
             
       - text: "assignments"
         menu:

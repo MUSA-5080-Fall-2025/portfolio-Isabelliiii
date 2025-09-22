@@ -1,0 +1,8 @@
+"0",""
+"0","# Calculate correlation"
+"0","correlation <- cor(county_data$median_ageE, county_data$median_incomeE, use = ""complete.obs"")"
+"0","print(paste(""Correlation coefficient:"", round(correlation, 3)))"
+"1","[1]"
+"1"," ""Correlation coefficient: -0.317"""
+"1","
+"
