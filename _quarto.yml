@@ -16,12 +16,17 @@ website:
             text: "Week 1 Notes"
           - href: weekly-notes/week-02-notes.qmd
             text: "Week 2 Notes"
+          - href: weekly-notes/week-03-notes.qmd
+            text: "Week 3 Notes"
+            
+
       - text: "labs"
         menu:
           - href: labs/
             text: "All labs"
           - href: labs/lab0/scripts/lab0_template.qmd
             text: "lab 0"
+            
       - text: "assignments"
         menu:
           - href: assignments/

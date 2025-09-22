@@ -2,42 +2,42 @@
   {
     "objectID": "weekly-notes/week-03-notes.html",
     "href": "weekly-notes/week-03-notes.html",
-    "title": "Week 1 Notes - Course Introduction",
+    "title": "Week 3 Notes -",
     "section": "",
     "text": "Set up portfolio\nR,quarto,github"
   },
   {
     "objectID": "weekly-notes/week-03-notes.html#key-concepts-learned",
     "href": "weekly-notes/week-03-notes.html#key-concepts-learned",
-    "title": "Week 1 Notes - Course Introduction",
+    "title": "Week 3 Notes -",
     "section": "",
     "text": "Set up portfolio\nR,quarto,github"
   },
   {
     "objectID": "weekly-notes/week-03-notes.html#coding-techniques",
     "href": "weekly-notes/week-03-notes.html#coding-techniques",
-    "title": "Week 1 Notes - Course Introduction",
+    "title": "Week 3 Notes -",
     "section": "Coding Techniques",
     "text": "Coding Techniques\n\nBasic setting up skill\nHow to render and push"
   },
   {
     "objectID": "weekly-notes/week-03-notes.html#questions-challenges",
     "href": "weekly-notes/week-03-notes.html#questions-challenges",
-    "title": "Week 1 Notes - Course Introduction",
+    "title": "Week 3 Notes -",
     "section": "Questions & Challenges",
     "text": "Questions & Challenges\n\nWhich file I should go to when I make changes\nThe whole process of making changes"
   },
   {
     "objectID": "weekly-notes/week-03-notes.html#connections-to-policy",
     "href": "weekly-notes/week-03-notes.html#connections-to-policy",
-    "title": "Week 1 Notes - Course Introduction",
+    "title": "Week 3 Notes -",
     "section": "Connections to Policy",
     "text": "Connections to Policy\n\nUpload my work to my portfolio for visualization"
   },
   {
     "objectID": "weekly-notes/week-03-notes.html#reflection",
     "href": "weekly-notes/week-03-notes.html#reflection",
-    "title": "Week 1 Notes - Course Introduction",
+    "title": "Week 3 Notes -",
     "section": "Reflection",
     "text": "Reflection\n\nHow different platform can connect and work with each other\nI want to practice more and dig deeper"
   },
@@ -172,14 +172,14 @@
     "href": "assignments/assignment1/assignment1_template.html",
     "title": "Assignment 1: Census Data Quality for Policy Decisions",
     "section": "",
-    "text": "You are a data analyst for the [Your State] Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.\n\n\n\n\nApply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders\n\n\n\n\nSubmit by posting your updated portfolio link on Canvas. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/\nMake sure to update your _quarto.yml navigation to include this assignment under an “Assignments” menu."
+    "text": "You are a data analyst for the [State Name] Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues.\n\n\n\n\nApply dplyr functions to real census data for policy analysis\nEvaluate data quality using margins of error\nConnect technical analysis to algorithmic decision-making\nIdentify potential equity implications of data reliability issues\nCreate professional documentation for policy stakeholders\n\n\n\n\nSubmit by posting your updated portfolio link on Canvas. Your assignment should be accessible at your-portfolio-url/assignments/assignment_1/\nMake sure to update your _quarto.yml navigation to include this assignment under an “Assignments” menu."
   },
   {
     "objectID": "assignments/assignment1/assignment1_template.html#scenario",
     "href": "assignments/assignment1/assignment1_template.html#scenario",
     "title": "Assignment 1: Census Data Quality for Policy Decisions",
     "section": "",
-    "text": "You are a data analyst for the [Your State] Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues."
+    "text": "You are a data analyst for the [State Name] Department of Human Services. The department is considering implementing an algorithmic system to identify communities that should receive priority for social service funding and outreach programs. Your supervisor has asked you to evaluate the quality and reliability of available census data to inform this decision.\nDrawing on our Week 2 discussion of algorithmic bias, you need to assess not just what the data shows, but how reliable it is and what communities might be affected by data quality issues."
   },
   {
     "objectID": "assignments/assignment1/assignment1_template.html#learning-objectives",
