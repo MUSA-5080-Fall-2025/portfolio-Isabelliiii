@@ -929,20 +929,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Your Task:</strong> Write an executive summary that integrates findings from all four analyses.</p>
 <p><strong>Executive Summary Requirements:</strong> 1. <strong>Overall Pattern Identification</strong>: What are the systematic patterns across all your analyses? 2. <strong>Equity Assessment</strong>: Which communities face the greatest risk of algorithmic bias based on your findings? 3. <strong>Root Cause Analysis</strong>: What underlying factors drive both data quality issues and bias risk? 4. <strong>Strategic Recommendations</strong>: What should the Department implement to address these systematic issues?</p>
 <p><strong>Executive Summary:</strong></p>
-<section id="overall-pattern-identification" class="level4">
-<h4 class="anchored" data-anchor-id="overall-pattern-identification">Overall Pattern Identification</h4>
+<section id="overall-pattern-identification" class="level5">
+<h5 class="anchored" data-anchor-id="overall-pattern-identification">Overall Pattern Identification</h5>
 <p>Our analysis of Mississippi’s county, and tract-level ACS data reveals systematic differences in data reliability across the state. Larger, more urbanized, and higher-income counties such as DeSoto, Jackson, and Madison consistently show low margins of error (MOE &lt; 5%), making them suitable for algorithmic decision-making. In contrast, smaller, rural, and economically disadvantaged counties—such as Adams, Carroll, Sharkey, and Wilkinson exhibit much higher MOEs, often exceeding 10–20%. These patterns highlight a divide between counties where survey data is robust and those where uncertainty limits the safe use of algorithmic systems.</p>
 </section>
-<section id="equity-assessment" class="level4">
-<h4 class="anchored" data-anchor-id="equity-assessment">Equity Assessment</h4>
+<section id="equity-assessment" class="level5">
+<h5 class="anchored" data-anchor-id="equity-assessment">Equity Assessment</h5>
 <p>Communities at the greatest risk of algorithmic bias are those with both high demographic diversity and weaker survey reliability. Rural Black-majority counties such as Adams, or counties with small Hispanic populations, often display elevated MOEs. If algorithms rely on these estimates without adjustment, they risk systematically underrepresenting marginalized groups and misallocating resources away from the very populations most in need of support. By contrast, suburban counties with stable data will receive more consistent outcomes, reinforcing existing inequities between regions.</p>
 </section>
-<section id="root-cause-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="root-cause-analysis">Root Cause Analysis</h4>
+<section id="root-cause-analysis" class="level5">
+<h5 class="anchored" data-anchor-id="root-cause-analysis">Root Cause Analysis</h5>
 <p>The root causes of these disparities lie in structural differences in population size, socioeconomic context, and geographic accessibility. Smaller populations with smaller ACS sample sizes, amplifying statistical uncertainty. Rural areas often face higher survey nonresponse rates and logistical barriers that further reduce data precision. At the demographic level, minority populations within smaller tracts tend to have particularly high MOEs, not because their needs are less, but because the survey infrastructure is less effective at capturing their experiences.</p>
 </section>
-<section id="strategic-recommendations" class="level4">
-<h4 class="anchored" data-anchor-id="strategic-recommendations">Strategic Recommendations</h4>
+<section id="strategic-recommendations" class="level5">
+<h5 class="anchored" data-anchor-id="strategic-recommendations">Strategic Recommendations</h5>
 <p>To address these challenges, the Department should implement a tiered algorithmic framework. For counties with high-confidence data, algorithmic allocation can proceed with minimal oversight. For counties with moderate confidence, algorithms should be deployed but coupled with regular audits and feedback loops to monitor performance. For low-confidence counties, algorithmic reliance should be minimized, with decisions supplemented by local administrative data, targeted surveys, and manual review by policy experts. Beyond the immediate framework, the Department should invest in improving data infrastructure expanding local survey capacity, partnering with community organizations, and ensuring demographic groups with historically unreliable estimates are better represented.</p>
 </section>
 </section>
@@ -1568,37 +1568,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(n,<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                                          
-1 function ()                             
-2 {                                       
-3     peek_mask()$get_current_group_size()
-4 }                                       </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Include: county name, median income, MOE percentage, reliability category</span></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Add a new column with algorithm recommendations using case_when():</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># - High Confidence: "Safe for algorithmic decisions"</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - Moderate Confidence: "Use with caution - monitor outcomes"  </span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - Low Confidence: "Requires manual review or additional data"</span></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Format as a professional table with kable()</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Key Recommendations:</strong></p>
 <p><strong>Your Task:</strong> Use your analysis results to provide specific guidance to the department.</p>
 <ol type="1">
-<li><p><strong>Counties suitable for immediate algorithmic implementation:</strong> These counties have High Confidence data (MOE &lt; 5%), meaning the estimates are reliable enough for algorithmic allocation. Examples include DeSoto, Harrison, Jackson, Lamar, Lowndes, Madison, Monroe, Rankin, and Warren. These counties generally have larger or more affluent populations, which improves ACS survey precision. Algorithms can be implemented directly in these counties with minimal risk.</p></li>
-<li><p><strong>Counties requiring additional oversight:</strong> These are Moderate Confidence counties (MOE 5–10%). Examples include Alcorn (8.7%), Benton (7.8%), Forrest (5.6%), Lee (5.4%), Pike (5.7%) and many others across Mississippi. While the ACS data is usable, there is enough uncertainty that algorithmic decisions could introduce bias or misallocation if left unchecked. Recommendation: Algorithms may be applied here, but outcomes should be monitored carefully. Suggested oversight strategies include:</p></li>
+<li><strong>Counties suitable for immediate algorithmic implementation:</strong></li>
 </ol>
+<p>These counties have High Confidence data (MOE &lt; 5%), meaning the estimates are reliable enough for algorithmic allocation. Examples include DeSoto, Harrison, Jackson, Lamar, Lowndes, Madison, Monroe, Rankin, and Warren. These counties generally have larger or more affluent populations, which improves ACS survey precision. Algorithms can be implemented directly in these counties with minimal risk.</p>
+<ol start="2" type="1">
+<li><strong>Counties requiring additional oversight:</strong></li>
+</ol>
+<p>These are Moderate Confidence counties (MOE 5–10%). Examples include Alcorn (8.7%), Benton (7.8%), Forrest (5.6%), Lee (5.4%), Pike (5.7%) and many others across Mississippi. While the ACS data is usable, there is enough uncertainty that algorithmic decisions could introduce bias or misallocation if left unchecked. Recommendation: Algorithms may be applied here, but outcomes should be monitored carefully. Suggested oversight strategies include:</p>
 <ul>
 <li>Conducting periodic audits of funding allocations.</li>
 <li>Comparing algorithmic outputs with administrative or programmatic data.</li>
 <li>Implementing feedback loops from local service providers to catch anomalies.</li>
 </ul>
 <ol start="3" type="1">
-<li><strong>Counties needing alternative approaches:</strong> These are Low Confidence counties (MOE &gt; 10%), such as Adams (12.5%), Covington (14.3%), Sharkey (24.9%), Wilkinson (23.6%), Carroll (34.5%) and many others. These counties tend to be smaller, more rural, or economically disadvantaged, which leads to higher survey uncertainty. Relying purely on ACS estimates here risks misidentifying need and exacerbating inequities. Recommendation: Algorithms should not be the sole basis for decision-making in these counties. Alternative approaches include:</li>
+<li><strong>Counties needing alternative approaches:</strong></li>
 </ol>
+<p>These are Low Confidence counties (MOE &gt; 10%), such as Adams (12.5%), Covington (14.3%), Sharkey (24.9%), Wilkinson (23.6%), Carroll (34.5%) and many others. These counties tend to be smaller, more rural, or economically disadvantaged, which leads to higher survey uncertainty. Relying purely on ACS estimates here risks misidentifying need and exacerbating inequities. Recommendation: Algorithms should not be the sole basis for decision-making in these counties. Alternative approaches include:</p>
 <ul>
 <li>Supplementing ACS data with local administrative records (e.g., school enrollment, SNAP participation).</li>
 <li>Commissioning targeted surveys to improve reliability.</li>
@@ -1618,14 +1607,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Technical Notes</h1>
 <p><strong>Data Sources:</strong> - U.S. Census Bureau, American Community Survey 2018-2022 5-Year Estimates - Retrieved via tidycensus R package on [26/09/2025]</p>
 <p><strong>Reproducibility:</strong> - All analysis conducted in R version [4.5.1] - Census API key required for replication - Complete code and documentation available at: [https://musa-5080-fall-2025.github.io/portfolio-setup-Isabelliiii/]</p>
-<p><strong>Methodology Notes:</strong> - County selection was purposive: one high-confidence (DeSoto), one moderate-confidence (Alcorn), and one low-confidence (Adams) county were chosen for tract-level analysis to illustrate variation in data reliability.</p>
+<p><strong>Methodology Notes:</strong></p>
 <ul>
+<li><p>County selection was purposive: one high-confidence (DeSoto), one moderate-confidence (Alcorn), and one low-confidence (Adams) county were chosen for tract-level analysis to illustrate variation in data reliability.</p></li>
 <li><p>Data cleaning steps included removing redundant suffixes from county names, calculating MOE percentages, and categorizing estimates into High, Moderate, and Low confidence tiers.</p></li>
 <li><p>Demographic percentages (White, Black, Hispanic) were derived by dividing subgroup estimates by total population at the tract level.</p></li>
 <li><p>Reliability thresholds (5% and 10% MOE) were selected based on standard practice in survey research, though different cutoffs could produce slightly different classifications.</p></li>
 </ul>
-<p><strong>Limitations:</strong> - ACS margins of error are systematically higher in small and rural counties, producing uneven reliability across geographies.</p>
+<p><strong>Limitations:</strong></p>
 <ul>
+<li><p>ACS margins of error are systematically higher in small and rural counties, producing uneven reliability across geographies.</p></li>
 <li><p>At the tract level, nearly all estimates exceeded the 15% MOE threshold. This reflects inherent sampling limitations of the ACS rather than coding errors, since smaller tracts with limited populations yield highly unstable estimates. As a result, tract-level classifications of “high MOE” should be interpreted as relative signals of data quality rather than absolute indicators of unusability.</p></li>
 <li><p>Small denominators for minority populations inflate MOEs disproportionately, which may bias interpretations of racial/ethnic patterns.</p></li>
 <li><p>Recommendations are based on statistical reliability alone; qualitative knowledge and administrative data sources were not incorporated but would be essential in real-world policy design.</p></li>
