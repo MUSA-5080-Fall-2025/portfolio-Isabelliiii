@@ -216,10 +216,29 @@ ul.task-list li input[type="checkbox"] {
 <li>KML/KMZ (Google Earth)</li>
 <li>Database connections (PostGIS)</li>
 </ul>
-<p><strong>The Earth</strong> bumpy geoid -&gt; step 1. approximate Earth’s shape with ellipsoid step 2. tie ellipsoid to the real Earth (Datum) - 1866 Clarke Meades Ranch, Kansas - North American Datum 1927 (NAD 27) -&gt; NAD 83 - GRS 80 - earth centered - WGS 84 step 3. put down lat/lon grid &gt;&gt;&gt; Geographic (geodetic) Coordinate Systems with Lat/Lon (so far) step4. project 3D coordinate to flat screen - Cylindrical- no distortion at the line of tangency(where touch the Earth), as geting further from the line it get ditorted bigger. e.g.&nbsp;Mercator - transverse cylindrical/ transverse cylindrical - for elongated country like Chile, along one longitude(?) * SADD: Shape, Area, Distortion, Direction - conic: con shaped touch earth, for country: USA, China… - planar: from one point</p>
-<p><strong>Projected Coordinate System</strong> localized coordinate system based on non-distorted grid 1. UTM: 60 different zones, each zone is 6 degrees of longitude wide, how far away from the original corner of the left down False northing; False easting; no negative e.g.&nbsp;185,000N, 200,000E - in meters</p>
-<ol start="2" type="1">
-<li>State Plane (use in USA, PA): each state has their projection, based on their shape (conic) also from the SW corner, in feet e.g.&nbsp;in PA, cut state in half for projection-&gt; we use the one contains Philadelphia</li>
+<p><strong>The Earth</strong></p>
+<p>bumpy geoid -&gt;</p>
+<p>step 1. approximate Earth’s shape with ellipsoid.</p>
+<p>step 2. tie ellipsoid to the real Earth (Datum).</p>
+<ul>
+<li>1866 Clarke Meades Ranch, Kansas</li>
+<li>North American Datum 1927 (NAD 27) -&gt; NAD 83</li>
+<li>GRS 80 - earth centered</li>
+<li>WGS 84</li>
+</ul>
+<p>step 3. put down lat/lon grid &gt;&gt;&gt; Geographic (geodetic) Coordinate Systems with Lat/Lon (so far)</p>
+<p>step 4. project 3D coordinate to flat screen</p>
+<ul>
+<li>Cylindrical- no distortion at the line of tangency(where touch the Earth), as geting further from the line it get ditorted bigger. e.g.&nbsp;Mercator</li>
+<li>transverse cylindrical/ transverse cylindrical - for elongated country like Chile, along one longitude(?) <em>SADD</em>: Shape, Area, Distortion, Direction</li>
+<li>conic: con shaped touch earth, for country: USA, China…</li>
+<li>planar: from one point</li>
+</ul>
+<p><strong>Projected Coordinate System</strong></p>
+<p>localized coordinate system based on non-distorted grid</p>
+<ol type="1">
+<li><p>UTM: 60 different zones, each zone is 6 degrees of longitude wide, how far away from the original corner of the left down False northing; False easting; no negative e.g.&nbsp;185,000N, 200,000E - in meters</p></li>
+<li><p>State Plane (use in USA, PA): each state has their projection, based on their shape (conic) also from the SW corner, in feet e.g.&nbsp;in PA, cut state in half for projection-&gt; we use the one contains Philadelphia</p></li>
 </ol>
 <p><strong>Geographic Coordinate Systems (GCS)</strong></p>
 <ul>
@@ -238,7 +257,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="coding-techniques" class="level2">
 <h2 class="anchored" data-anchor-id="coding-techniques">Coding Techniques</h2>
-<p><strong>Spatial Subsetting</strong> Key functions: st_filter(), st_intersects(), st_touches(), st_within()</p>
+<p><strong>Spatial Subsetting</strong></p>
+<p>Key functions: st_filter(), st_intersects(), st_touches(), st_within()</p>
 <ul>
 <li>r predicate-structure # Basic structure: st_filter (data_to_filter, reference_geometry, .predicate = relationship)</li>
 <li>“Which counties border Allegheny?” → st_touches</li>
@@ -260,12 +280,25 @@ ul.task-list li input[type="checkbox"] {
 <li>You’re doing spatial overlay analysis</li>
 <li>You need to clip data to a study area</li>
 </ul>
-<p><strong>Note about (.)</strong> The dot (.) is a placeholder that represents the data being passed through the pipe (%&gt;%). example: pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 ) The . refers to pa_counties - the data frame being passed through the pipe. So this is equivalent to: pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )</p>
-<p><strong>Checking and Setting CRS</strong> - To simply check current CRS st_crs(pa_counties) - To set CRS (ONLY if missing) pa_counties &lt;- st_set_crs(pa_counties, 4326) - Transform to different CRS Pennsylvania South State Plane (good for PA analysis) pa_counties_projected &lt;- pa_counties %&gt;% st_transform(crs = 3365) - Transform to Albers Equal Area (good for area calculations) pa_counties_albers &lt;- pa_counties %&gt;% st_transform(crs = 5070) `</p>
+<p><strong>Note about (.)</strong></p>
+<p>The dot (.) is a placeholder that represents the data being passed through the pipe (%&gt;%).</p>
+<p>Example: pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 ) The . refers to pa_counties - the data frame being passed through the pipe. So this is equivalent to: pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )</p>
+<p><strong>Checking and Setting CRS</strong></p>
+<ul>
+<li>To simply check current CRS st_crs(pa_counties)</li>
+<li>To set CRS (ONLY if missing) pa_counties &lt;- st_set_crs(pa_counties, 4326)</li>
+<li>Transform to different CRS Pennsylvania South State Plane (good for PA analysis) pa_counties_projected &lt;- pa_counties %&gt;% st_transform(crs = 3365)</li>
+<li>Transform to Albers Equal Area (good for area calculations) pa_counties_albers &lt;- pa_counties %&gt;% st_transform(crs = 5070) `</li>
+</ul>
 </section>
 <section id="connections-to-policy" class="level2">
 <h2 class="anchored" data-anchor-id="connections-to-policy">Connections to Policy</h2>
-<p><strong>Why projection matter?</strong> - Can’t preserve area, distance, and angles simultaneously - Different projections optimize different properties - Wrong projection lead to wrong analysis results!</p>
+<p><strong>Why projection matter?</strong></p>
+<ul>
+<li>Can’t preserve area, distance, and angles simultaneously</li>
+<li>Different projections optimize different properties</li>
+<li>Wrong projection lead to wrong analysis results!</li>
+</ul>
 
 
 </section>

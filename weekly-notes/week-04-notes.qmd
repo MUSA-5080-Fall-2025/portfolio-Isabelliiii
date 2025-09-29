@@ -19,22 +19,32 @@ turn real world into simplified geometric
 - Database connections (PostGIS)
 
 **The Earth**
+
 bumpy geoid -> 
-step 1. approximate Earth's shape with ellipsoid
-step 2. tie ellipsoid to the real Earth  (Datum)
-- 1866 Clarke Meades Ranch, Kansas - North American Datum 1927 (NAD 27) -> NAD 83
+
+step 1. approximate Earth's shape with ellipsoid.
+
+step 2. tie ellipsoid to the real Earth  (Datum).
+
+- 1866 Clarke Meades Ranch, Kansas 
+- North American Datum 1927 (NAD 27) -> NAD 83
 - GRS 80 - earth centered
 - WGS 84
+
 step 3. put down lat/lon grid >>>  Geographic (geodetic) Coordinate Systems with Lat/Lon (so far)
-step4. project 3D coordinate to flat screen
+
+step 4. project 3D coordinate to flat screen
+
 - Cylindrical- no distortion at the line of tangency(where touch the Earth), as geting further from the line it get ditorted bigger. e.g. Mercator
 - transverse cylindrical/ transverse cylindrical - for elongated country like Chile, along one longitude(?)
-* SADD: Shape, Area, Distortion, Direction
+*SADD*: Shape, Area, Distortion, Direction
 - conic: con shaped touch earth, for country: USA, China...
 - planar: from one point
 
 **Projected Coordinate System**
+
 localized coordinate system based on non-distorted grid
+
 1. UTM: 60 different zones, each zone is 6 degrees of longitude wide, how far away from the original corner of the left down
 False northing; False easting; no negative
 e.g. 185,000N, 200,000E - in meters
@@ -59,6 +69,7 @@ e.g. in PA, cut state in half for projection-> we use the one contains Philadelp
 
 ## Coding Techniques
 **Spatial Subsetting**
+
 Key functions: st_filter(), st_intersects(), st_touches(), st_within()
 
 - r predicate-structure # Basic structure:
@@ -97,13 +108,16 @@ Use **st_intersection()** when:
 - You need to clip data to a study area
 
 **Note about (.)**
+
 The dot (.) is a placeholder that represents the data being passed through the pipe (%>%).
-example:
+
+Example:
 pa_counties <- pa_counties %>% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 )
 The . refers to pa_counties - the data frame being passed through the pipe. So this is equivalent to:
 pa_counties <- pa_counties %>% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )
 
 **Checking and Setting CRS**
+
 - To simply check current CRS st_crs(pa_counties)
 - To set CRS (ONLY if missing) pa_counties <- st_set_crs(pa_counties, 4326)
 - Transform to different CRS
@@ -115,6 +129,7 @@ pa_counties_albers <- pa_counties %>% st_transform(crs = 5070) `
 
 ## Connections to Policy
 **Why projection matter?**
+
 - Can’t preserve area, distance, and angles simultaneously
 - Different projections optimize different properties
 - Wrong projection lead to wrong analysis results!
