@@ -1,23 +1,122 @@
 ---
-title: "Week 4 Notes - "
-date: "2025-09-08"
+title: "Week 4 Notes -Spatial Data & GIS Operations in R"
+date: "2025-09-29"
 ---
 
 ## Key Concepts Learned
-- Set up portfolio
-- R,quarto,github
+**Vector Data Model**
+turn real world into simplified geometric 
+- Points → Locations (schools, hospitals, crime incidents)
+- Lines → Linear features (roads, rivers, transit routes)
+- Polygons → Areas (census tracts, neighborhoods, service areas)
+
+- Shape file (.shp+supporting files)
+.shp (schools-(95.00,Q.00))
+.shx (schools-(1))
+.dbf (school,name:penn)
+- GeoJSON(.geojson)
+- KML/KMZ (Google Earth)
+- Database connections (PostGIS)
+
+**The Earth**
+bumpy geoid -> 
+step 1. approximate Earth's shape with ellipsoid
+step 2. tie ellipsoid to the real Earth  (Datum)
+- 1866 Clarke Meades Ranch, Kansas - North American Datum 1927 (NAD 27) -> NAD 83
+- GRS 80 - earth centered
+- WGS 84
+step 3. put down lat/lon grid >>>  Geographic (geodetic) Coordinate Systems with Lat/Lon (so far)
+step4. project 3D coordinate to flat screen
+- Cylindrical- no distortion at the line of tangency(where touch the Earth), as geting further from the line it get ditorted bigger. e.g. Mercator
+- transverse cylindrical/ transverse cylindrical - for elongated country like Chile, along one longitude(?)
+* SADD: Shape, Area, Distortion, Direction
+- conic: con shaped touch earth, for country: USA, China...
+- planar: from one point
+
+**Projected Coordinate System**
+localized coordinate system based on non-distorted grid
+1. UTM: 60 different zones, each zone is 6 degrees of longitude wide, how far away from the original corner of the left down
+False northing; False easting; no negative
+e.g. 185,000N, 200,000E - in meters
+   
+2. State Plane (use in USA, PA): each state has their projection, based on their shape (conic)
+also from the SW corner, in feet
+e.g. in PA, cut state in half for projection-> we use the one contains Philadelphia
+
+**Geographic Coordinate Systems (GCS)**
+
+- Latitude/longitude coordinates
+- Units: decimal degrees
+- Good for: Global datasets, web mapping
+- Bad for: Area/distance calculations
+
+**Projected Coordinate Systems (PCS)**
+
+- X/Y coordinates on a flat plane
+- Units: meters, feet, etc.
+- Good for: Local analysis, accurate measurements
+- Bad for: Large areas, global datasets
 
 ## Coding Techniques
-- Basic setting up skill
-- How to render and push
+**Spatial Subsetting**
+Key functions: st_filter(), st_intersects(), st_touches(), st_within()
 
-## Questions & Challenges
-- Which file I should go to when I make changes
-- The whole process of making changes
+- r predicate-structure # Basic structure:
+st_filter
+(data_to_filter, reference_geometry, .predicate = relationship)
+- “Which counties border Allegheny?” → st_touches
+- “Which tracts are IN Allegheny?” → st_within
+- “Which tracts overlap a metro area?” → st_intersects
+
+**When to Use Each**
+- st_intersects()
+Any overlap at all, “Counties affected by flooding”
+- st_touches()
+Share boundary, no interior overlap	“Neighboring counties”
+- st_within()
+Completely inside, “Schools within district boundaries”
+- st_contains()	
+Completely contains, “Districts containing hospitals”
+- st_overlaps()	
+Partial overlap, “Overlapping service areas”
+- st_disjoint()
+No spatial relationship, “Counties separate from urban areas”
+
+Use **st_filter()** when:
+
+- “Which census tracts touch hospital service areas?”
+- You want to select/identify features based on location
+- You need complete features with their original boundaries
+- You’re counting
+
+Use **st_intersection()** when:
+
+- “What is the area of overlap between tracts and service zones?”
+- You need to calculate areas, populations, or other measures within specific boundaries
+- You’re doing spatial overlay analysis
+- You need to clip data to a study area
+
+**Note about (.)**
+The dot (.) is a placeholder that represents the data being passed through the pipe (%>%).
+example:
+pa_counties <- pa_counties %>% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 )
+The . refers to pa_counties - the data frame being passed through the pipe. So this is equivalent to:
+pa_counties <- pa_counties %>% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )
+
+**Checking and Setting CRS**
+- To simply check current CRS st_crs(pa_counties)
+- To set CRS (ONLY if missing) pa_counties <- st_set_crs(pa_counties, 4326)
+- Transform to different CRS
+Pennsylvania South State Plane (good for PA analysis)
+pa_counties_projected <- pa_counties %>%   st_transform(crs = 3365)
+- Transform to Albers Equal Area (good for area calculations)
+pa_counties_albers <- pa_counties %>% st_transform(crs = 5070) `
+
 
 ## Connections to Policy
-- Upload my work to my portfolio for visualization
+**Why projection matter?**
+- Can’t preserve area, distance, and angles simultaneously
+- Different projections optimize different properties
+- Wrong projection lead to wrong analysis results!
 
-## Reflection
-- How different platform can connect and work with each other
-- I want to practice more and dig deeper
+

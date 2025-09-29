@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-22">
+<meta name="dcterms.date" content="2025-09-29">
 
-<title>Week 3 Notes - Data Visualization &amp; Exploratory Analysis – Isabelle Li - MUSA 5080 Portfolio</title>
+<title>Week 4 Notes -Spatial Data &amp; GIS Operations in R – Isabelle Li - MUSA 5080 Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,17 +173,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#key-concepts-learned" id="toc-key-concepts-learned" class="nav-link active" data-scroll-target="#key-concepts-learned">Key Concepts Learned</a>
-  <ul class="collapse">
-  <li><a href="#the-policy-implications" id="toc-the-policy-implications" class="nav-link" data-scroll-target="#the-policy-implications">The policy Implications</a></li>
-  <li><a href="#bad-visualizations-consequences" id="toc-bad-visualizations-consequences" class="nav-link" data-scroll-target="#bad-visualizations-consequences">Bad Visualizations Consequences</a></li>
-  </ul></li>
-  <li><a href="#grammar-of-graphics" id="toc-grammar-of-graphics" class="nav-link" data-scroll-target="#grammar-of-graphics">Grammar of Graphics</a>
-  <ul class="collapse">
-  <li><a href="#the-ggplot2-philosophy" id="toc-the-ggplot2-philosophy" class="nav-link" data-scroll-target="#the-ggplot2-philosophy">The ggplot2 Philosophy</a></li>
-  </ul></li>
-  <li><a href="#questions-answers" id="toc-questions-answers" class="nav-link" data-scroll-target="#questions-answers">Questions &amp; Answers</a></li>
-  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection">Reflection</a></li>
+  <li><a href="#key-concepts-learned" id="toc-key-concepts-learned" class="nav-link active" data-scroll-target="#key-concepts-learned">Key Concepts Learned</a></li>
+  <li><a href="#coding-techniques" id="toc-coding-techniques" class="nav-link" data-scroll-target="#coding-techniques">Coding Techniques</a></li>
+  <li><a href="#connections-to-policy" id="toc-connections-to-policy" class="nav-link" data-scroll-target="#connections-to-policy">Connections to Policy</a></li>
   </ul>
 </nav>
     </div>
@@ -192,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 3 Notes - Data Visualization &amp; Exploratory Analysis</h1>
+<h1 class="title">Week 4 Notes -Spatial Data &amp; GIS Operations in R</h1>
 </div>
 
 
@@ -203,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 22, 2025</p>
+      <p class="date">September 29, 2025</p>
     </div>
   </div>
   
@@ -217,55 +209,63 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="key-concepts-learned" class="level2">
 <h2 class="anchored" data-anchor-id="key-concepts-learned">Key Concepts Learned</h2>
-<p>Quartet: Datasets with identical summary statistics, but completely different patterns when visualized.</p>
-<section id="the-policy-implications" class="level3">
-<h3 class="anchored" data-anchor-id="the-policy-implications">The policy Implications</h3>
-<p>why it matters - Summary statistics can hide critical patterns - Outliers may represent important communities - Relationships aren’t always linear - Visual inspection reveals data quality issues</p>
-</section>
-<section id="bad-visualizations-consequences" class="level3">
-<h3 class="anchored" data-anchor-id="bad-visualizations-consequences">Bad Visualizations Consequences</h3>
-<p>Common problems in government data presentation: - Misleading scales or axes - Cherry-picked time periods - Hidden or ignored uncertainty - Missing context about data reliability</p>
-<p>The smaller your sample size is, the larger your margin of error would be</p>
-</section>
-</section>
-<section id="grammar-of-graphics" class="level2">
-<h2 class="anchored" data-anchor-id="grammar-of-graphics">Grammar of Graphics</h2>
-<section id="the-ggplot2-philosophy" class="level3">
-<h3 class="anchored" data-anchor-id="the-ggplot2-philosophy">The ggplot2 Philosophy</h3>
-<p>principles: Data-Aesthetics-Geometries-Visual Data: Your data set (census data, survey responses, etc.)“I would like to make a plot” coding:g-ggplot(data=your_data)</p>
-<p>Aesthetics: What variables map to visual properties (x, y, color, size) how to draw a connection to specific element in our plot coding: aes(x=variable 1,y=variable 2) x, y - position color - point/line color fill - area fill color size - point/line size shape - point shape alpha - transparency</p>
-<p>Geometries: How to display the data (points, bars, lines) coding:geom_something()</p>
-<p>Additional layers: Scales, themes, facets, annotations coding:additional_layers() BUILD PLOTS BY ADDING LAYERS WITH +</p>
-<section id="understand-your-data-before-making-decisions-or-building-models" class="level4">
-<h4 class="anchored" data-anchor-id="understand-your-data-before-making-decisions-or-building-models">Understand your data before making decisions or building models</h4>
+<p><strong>Vector Data Model</strong> turn real world into simplified geometric - Points → Locations (schools, hospitals, crime incidents) - Lines → Linear features (roads, rivers, transit routes) - Polygons → Areas (census tracts, neighborhoods, service areas)</p>
 <ul>
-<li>What does the data look like? (distributions, missing values)</li>
-<li>What patterns exist? (relationships, clusters, trends)</li>
-<li>What’s unusual? (outliers, anomalies, data quality issues)</li>
-<li>What questions does this raise? (hypotheses for further investigation)</li>
-<li>How reliable is this data</li>
+<li>Shape file (.shp+supporting files) .shp (schools-(95.00,Q.00)) .shx (schools-(1)) .dbf (school,name:penn)</li>
+<li>GeoJSON(.geojson)</li>
+<li>KML/KMZ (Google Earth)</li>
+<li>Database connections (PostGIS)</li>
+</ul>
+<p><strong>The Earth</strong> bumpy geoid -&gt; step 1. approximate Earth’s shape with ellipsoid step 2. tie ellipsoid to the real Earth (Datum) - 1866 Clarke Meades Ranch, Kansas - North American Datum 1927 (NAD 27) -&gt; NAD 83 - GRS 80 - earth centered - WGS 84 step 3. put down lat/lon grid &gt;&gt;&gt; Geographic (geodetic) Coordinate Systems with Lat/Lon (so far) step4. project 3D coordinate to flat screen - Cylindrical- no distortion at the line of tangency(where touch the Earth), as geting further from the line it get ditorted bigger. e.g.&nbsp;Mercator - transverse cylindrical/ transverse cylindrical - for elongated country like Chile, along one longitude(?) * SADD: Shape, Area, Distortion, Direction - conic: con shaped touch earth, for country: USA, China… - planar: from one point</p>
+<p><strong>Projected Coordinate System</strong> localized coordinate system based on non-distorted grid 1. UTM: 60 different zones, each zone is 6 degrees of longitude wide, how far away from the original corner of the left down False northing; False easting; no negative e.g.&nbsp;185,000N, 200,000E - in meters</p>
+<ol start="2" type="1">
+<li>State Plane (use in USA, PA): each state has their projection, based on their shape (conic) also from the SW corner, in feet e.g.&nbsp;in PA, cut state in half for projection-&gt; we use the one contains Philadelphia</li>
+</ol>
+<p><strong>Geographic Coordinate Systems (GCS)</strong></p>
+<ul>
+<li>Latitude/longitude coordinates</li>
+<li>Units: decimal degrees</li>
+<li>Good for: Global datasets, web mapping</li>
+<li>Bad for: Area/distance calculations</li>
+</ul>
+<p><strong>Projected Coordinate Systems (PCS)</strong></p>
+<ul>
+<li>X/Y coordinates on a flat plane</li>
+<li>Units: meters, feet, etc.</li>
+<li>Good for: Local analysis, accurate measurements</li>
+<li>Bad for: Large areas, global datasets</li>
 </ul>
 </section>
-<section id="enhanced-process-for-policy-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="enhanced-process-for-policy-analysis">Enhanced process for policy analysis</h4>
-<ol type="1">
-<li>Load and inspect - dimensions, variable types, missing data</li>
-<li>Assess reliability - examine margins of error, calculate coefficients of variation</li>
-<li>Visualize distributions - histograms, boxplots for each variable</li>
-<li>Explore relationships - scatter plots, correlations</li>
-<li>Identify patterns - grouping, clustering, geographical patterns</li>
-<li>Question anomalies - investigate outliers and unusual patterns</li>
-<li>Document limitations - prepare honest communication about data quality</li>
-</ol>
+<section id="coding-techniques" class="level2">
+<h2 class="anchored" data-anchor-id="coding-techniques">Coding Techniques</h2>
+<p><strong>Spatial Subsetting</strong> Key functions: st_filter(), st_intersects(), st_touches(), st_within()</p>
+<ul>
+<li>r predicate-structure # Basic structure: st_filter (data_to_filter, reference_geometry, .predicate = relationship)</li>
+<li>“Which counties border Allegheny?” → st_touches</li>
+<li>“Which tracts are IN Allegheny?” → st_within</li>
+<li>“Which tracts overlap a metro area?” → st_intersects</li>
+</ul>
+<p><strong>When to Use Each</strong> - st_intersects() Any overlap at all, “Counties affected by flooding” - st_touches() Share boundary, no interior overlap “Neighboring counties” - st_within() Completely inside, “Schools within district boundaries” - st_contains() Completely contains, “Districts containing hospitals” - st_overlaps() Partial overlap, “Overlapping service areas” - st_disjoint() No spatial relationship, “Counties separate from urban areas”</p>
+<p>Use <strong>st_filter()</strong> when:</p>
+<ul>
+<li>“Which census tracts touch hospital service areas?”</li>
+<li>You want to select/identify features based on location</li>
+<li>You need complete features with their original boundaries</li>
+<li>You’re counting</li>
+</ul>
+<p>Use <strong>st_intersection()</strong> when:</p>
+<ul>
+<li>“What is the area of overlap between tracts and service zones?”</li>
+<li>You need to calculate areas, populations, or other measures within specific boundaries</li>
+<li>You’re doing spatial overlay analysis</li>
+<li>You need to clip data to a study area</li>
+</ul>
+<p><strong>Note about (.)</strong> The dot (.) is a placeholder that represents the data being passed through the pipe (%&gt;%). example: pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(.)) / 1000000 ) The . refers to pa_counties - the data frame being passed through the pipe. So this is equivalent to: pa_counties &lt;- pa_counties %&gt;% mutate( area_sqkm = as.numeric(st_area(pa_counties)) / 1000000 )</p>
+<p><strong>Checking and Setting CRS</strong> - To simply check current CRS st_crs(pa_counties) - To set CRS (ONLY if missing) pa_counties &lt;- st_set_crs(pa_counties, 4326) - Transform to different CRS Pennsylvania South State Plane (good for PA analysis) pa_counties_projected &lt;- pa_counties %&gt;% st_transform(crs = 3365) - Transform to Albers Equal Area (good for area calculations) pa_counties_albers &lt;- pa_counties %&gt;% st_transform(crs = 5070) `</p>
 </section>
-</section>
-</section>
-<section id="questions-answers" class="level2">
-<h2 class="anchored" data-anchor-id="questions-answers">Questions &amp; Answers</h2>
-<p>Q: Why do algorithmic decision-making systems rely on “proxy” variables? A: Because the data we want to measure directly is often unavailable or difficult to collect.</p>
-</section>
-<section id="reflection" class="level2">
-<h2 class="anchored" data-anchor-id="reflection">Reflection</h2>
+<section id="connections-to-policy" class="level2">
+<h2 class="anchored" data-anchor-id="connections-to-policy">Connections to Policy</h2>
+<p><strong>Why projection matter?</strong> - Can’t preserve area, distance, and angles simultaneously - Different projections optimize different properties - Wrong projection lead to wrong analysis results!</p>
 
 
 </section>
