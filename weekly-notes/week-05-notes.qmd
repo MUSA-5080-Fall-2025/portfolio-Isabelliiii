@@ -1,0 +1,144 @@
+---
+title: "Week 5 Notes - Introduction to Linear Regression "
+date: "2025-10-06"
+---
+
+## Key Concepts Learned
+
+For any quantitative response Y and predictors X₁, X₂, ... Xₚ:
+
+Y=f(X)+ϵ
+
+Where:
+
+f = the systematic information X provides about Y
+
+- It's fixed but unknown
+- It's what we're trying to estimate
+- Different X values produce different Y values through f
+
+ε = random error (irreducible)
+
+**How Do We Estimate f**
+
+**Parametric Methods**
+
+- Make an assumption about the functional form (e.g., linear)
+- Reduces problem to estimating a few parameters
+- Easier to interpret
+
+Parametric approach: Linear Regression
+
+Advantages:
+
+- Simple and interpretable
+- Well-understood properties
+- Works remarkably well for many problems
+- Foundation for more complex methods
+
+Limitations:
+
+- Assumes linearity
+- Sensitive to outliers
+- Makes several assumptions 
+
+Non-Parametric Methods
+
+- Don’t assume a specific form
+- More flexible
+- Require more data
+- Harder to interpret
+
+### Model Evaluation
+
+Overfitting problems
+
+- Underfitting: Model too simple (high bias)
+- Good fit: Captures pattern without noise
+- Overfitting: Memorizes training data (high variance/follow noise)
+
+**When Can We Trust This Model**
+
+We must check diagnostics if violated:
+
+- Coefficients may be biased
+- Standard errors wrong
+- Predictions unreliable
+
+**Assumption 1**
+
+What we assume: Relationship is actually linear
+
+Check by:Residual Plot (blood test)
+
+Good: 
+- Random scatter
+- Points around 0
+- Constant spread
+
+Bad:
+- CUrved pattern
+- Model missing something
+- Predictions biased
+
+**Assumption 2**
+
+Heteroscedasticity: Variance changes across X (often a sympton of model misspecification)
+
+- Model fits well for some values (e.g., small counties) but poorly for others (large counties)
+- May indicate missing variables that matter more at certain X values
+- Ask: “What’s different about observations with large residuals?”
+
+Impact: Standard errors are wrong → p-values misleading
+
+**Formal Test: Breusch-Pagan**
+
+Interpretation:
+
+p > 0.05: Constant variance assumption OK
+p < 0.05: Evidence of heteroscedasticity
+
+If detected, solutions:
+
+1. Transform Y (try log(income))
+2. Robust standard errors
+3. Add missing variables
+4. Accept it (point predictions still OK for prediction goals)
+
+**Assumption: Normality of Residuals**
+
+What we assume: Residuals are normally distributed
+
+- Less critical for point predictions (unbiased regardless)
+- Important for confidence intervals and prediction intervals
+- Needed for valid hypothesis tests (t-tests, F-tests)
+
+**Assumptions 3: No Multicollinearity**
+
+For multiple regression: Predictors shouldn’t be too correlated
+
+Why it matters: Coefficients become unstable, hard to interpret
+
+**Assumption 4:No Influetial Outliers**
+
+Not all outliers are problems - only those with high leverage AND large residuals
+
+What to do with:
+
+- Investigate: Why is this observation unusual? (data error? truly unique?)
+- Report: Always note influential observations in your analysis
+- Sensitivity check: Refit model without them - do conclusions change?
+- Don’t automatically remove: They might represent real, important cases
+- For policy: An influential county might need special attention, not exclusion!
+
+## Improving the Model
+
+- Adding more predictors
+maybe population alone isn't enough
+
+- Log Transformations
+If relationship is curved, try transforming
+
+- Categorical Variables
+
+
