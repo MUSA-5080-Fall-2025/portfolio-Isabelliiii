@@ -42,7 +42,8 @@ website:
             text: "All assignments"
           - href: assignments/assignment1/assignment1_template.qmd
             text: "assignment1"
-
+          - href: assignments/assignment2/Li_Isabelle_Assignment2.qmd
+            text: "assignment2"
 
 format:
   html:
