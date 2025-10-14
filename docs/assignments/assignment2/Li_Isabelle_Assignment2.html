@@ -3998,7 +3998,6 @@ vertical-align: -.125em;
   <li><a href="#your-analysis" id="toc-your-analysis" class="nav-link" data-scroll-target="#your-analysis">Your Analysis</a></li>
   </ul></li>
   <li><a href="#finally---a-few-comments-about-your-incorporation-of-feedback" id="toc-finally---a-few-comments-about-your-incorporation-of-feedback" class="nav-link" data-scroll-target="#finally---a-few-comments-about-your-incorporation-of-feedback">Finally - A few comments about your incorporation of feedback!</a></li>
-  <li><a href="#after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." id="toc-after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." class="nav-link" data-scroll-target="#after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally.">After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.</a></li>
   <li><a href="#submission-requirements" id="toc-submission-requirements" class="nav-link" data-scroll-target="#submission-requirements">Submission Requirements</a></li>
   </ul>
 </nav>
@@ -4046,11 +4045,11 @@ vertical-align: -.125em;
 <h2 class="anchored" data-anchor-id="assignment-overview">Assignment Overview</h2>
 <p><strong>Learning Objectives:</strong></p>
 <ul>
-<li>Apply spatial operations to answer policy-relevant research questions</li>
-<li>Integrate census demographic data with spatial analysis</li>
-<li>Create publication-quality visualizations and maps</li>
-<li>Work with spatial data from multiple sources</li>
-<li>Communicate findings effectively for policy audiences</li>
+<li><p>Apply spatial operations to answer policy-relevant research questions</p></li>
+<li><p>Integrate census demographic data with spatial analysis</p></li>
+<li><p>Create publication-quality visualizations and maps</p></li>
+<li><p>Work with spatial data from multiple sources</p></li>
+<li><p>Communicate findings effectively for policy audiences</p></li>
 </ul>
 <hr>
 </section>
@@ -4068,17 +4067,28 @@ vertical-align: -.125em;
 <h4 class="anchored" data-anchor-id="step-1-data-collection-5-points">Step 1: Data Collection (5 points)</h4>
 <p>Load the required spatial data:</p>
 <ul>
-<li>Pennsylvania county boundaries</li>
-<li>Pennsylvania hospitals (from lecture data)</li>
-<li>Pennsylvania census tracts</li>
+<li><p>Pennsylvania county boundaries</p></li>
+<li><p>Pennsylvania hospitals (from lecture data)</p></li>
+<li><p>Pennsylvania census tracts</p></li>
 </ul>
 <p><strong>Your Task:</strong></p>
-<p><strong>Questions to answer:</strong> - How many hospitals are in your dataset? [223 hospitals] - How many census tracts? [17 districts] - What coordinate reference system is each dataset in? [Counties: WGS 84 / Pseudo-Mercator (EPSG 3857) Districts &amp; Hospitals: WGS 84 (EPSG 4326)] —</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li><p>How many hospitals are in your dataset? [223 hospitals]</p></li>
+<li><p>How many census tracts? [17 districts]</p></li>
+<li><p>What coordinate reference system is each dataset in? [Counties: WGS 84 / Pseudo-Mercator (EPSG 3857) Districts &amp; Hospitals: WGS 84 (EPSG 4326)]</p></li>
+</ul>
+<hr>
 </section>
 <section id="step-2-get-demographic-data" class="level4">
 <h4 class="anchored" data-anchor-id="step-2-get-demographic-data">Step 2: Get Demographic Data</h4>
 <p>Use <code>tidycensus</code> to download tract-level demographic data for Pennsylvania.</p>
-<p><strong>Required variables:</strong> - Total population - Median household income - Population 65 years and over (you may need to sum multiple age categories)</p>
+<p><strong>Required variables:</strong></p>
+<ul>
+<li><p>Total population</p></li>
+<li><p>Median household income</p></li>
+<li><p>Population 65 years and over (you may need to sum multiple age categories)</p></li>
+</ul>
 <p><strong>Your Task:</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get demographic data from ACS</span></span>
@@ -4158,7 +4168,11 @@ vertical-align: -.125em;
     0.0   429.0   665.0   718.8   945.0  2541.0 </code></pre>
 </div>
 </div>
-<p><strong>Questions to answer:</strong> - What year of ACS data are you using? [I’m using the 2019–2023 5-year ACS data] - How many tracts have missing income data?</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li><p>What year of ACS data are you using? [I’m using the 2019–2023 5-year ACS data]</p></li>
+<li><p>How many tracts have missing income data?</p></li>
+</ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(tracts_demog<span class="sc">$</span>medhhinc))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4178,7 +4192,11 @@ vertical-align: -.125em;
 </section>
 <section id="step-3-define-vulnerable-populations" class="level4">
 <h4 class="anchored" data-anchor-id="step-3-define-vulnerable-populations">Step 3: Define Vulnerable Populations</h4>
-<p>Identify census tracts with vulnerable populations based on TWO criteria: 1. Low median household income (choose an appropriate threshold) 2. Significant elderly population (choose an appropriate threshold)</p>
+<p>Identify census tracts with vulnerable populations based on TWO criteria:</p>
+<ol type="1">
+<li><p>Low median household income (choose an appropriate threshold)</p></li>
+<li><p>Significant elderly population (choose an appropriate threshold)</p></li>
+</ol>
 <p><strong>Your Task:</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for vulnerable tracts based on your criteria</span></span>
@@ -4210,7 +4228,24 @@ vertical-align: -.125em;
 <pre><code>[1] 422</code></pre>
 </div>
 </div>
-<p><strong>Questions to answer:</strong> - What income threshold did you choose and why? [We defined low-income tracts as those with a median household income below $72,943.5, which is the statewide median income across all Pennsylvania census tracts. This threshold was chosen because the median reflects the central tendency of income distribution and aligns with a relative, within-state definition of economic disadvantage.] - What elderly population threshold did you choose and why? [We defined elderly-heavy tracts as those with more than 23.5% of residents aged 65 and older, corresponding to the 75th percentile of the elderly population distribution. This threshold identifies tracts where the elderly population is significantly higher than typical statewide levels, focusing attention on areas with concentrated aging populations.] - How many tracts meet your vulnerability criteria? [422 tracts meet both criteria (low income and high elderly population).] - What percentage of PA census tracts are considered vulnerable by your definition? [Out of 3,445 tracts statewide, about 12.2% (422 / 3,445 × 100) are classified as vulnerable under our definition.] —</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li>What income threshold did you choose and why?</li>
+</ul>
+<p>[We defined low-income tracts as those with a median household income below $72,943.5, which is the statewide median income across all Pennsylvania census tracts. This threshold was chosen because the median reflects the central tendency of income distribution and aligns with a relative, within-state definition of economic disadvantage.]</p>
+<ul>
+<li>What elderly population threshold did you choose and why?</li>
+</ul>
+<p>[We defined elderly-heavy tracts as those with more than 23.5% of residents aged 65 and older, corresponding to the 75th percentile of the elderly population distribution. This threshold identifies tracts where the elderly population is significantly higher than typical statewide levels, focusing attention on areas with concentrated aging populations.]</p>
+<ul>
+<li>How many tracts meet your vulnerability criteria?</li>
+</ul>
+<p>[422 tracts meet both criteria (low income and high elderly population).]</p>
+<ul>
+<li>What percentage of PA census tracts are considered vulnerable by your definition?</li>
+</ul>
+<p>[Out of 3,445 tracts statewide, about 12.2% (422 / 3,445 × 100) are classified as vulnerable under our definition.]</p>
+<hr>
 </section>
 <section id="step-4-calculate-distance-to-hospitals" class="level4">
 <h4 class="anchored" data-anchor-id="step-4-calculate-distance-to-hospitals">Step 4: Calculate Distance to Hospitals</h4>
@@ -4292,11 +4327,14 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 <p><strong>Requirements:</strong></p>
 <ul>
-<li>Use an appropriate projected coordinate system for Pennsylvania</li>
-<li>Calculate distances in miles</li>
-<li>Explain why you chose your projection</li>
+<li><p>Use an appropriate projected coordinate system for Pennsylvania</p></li>
+<li><p>Calculate distances in miles</p></li>
+<li><p>Explain why you chose your projection</p></li>
 </ul>
-<p><strong>Questions to answer:</strong> - What is the average distance to the nearest hospital for vulnerable tracts?</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li>What is the average distance to the nearest hospital for vulnerable tracts?</li>
+</ul>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vulnerable_with_dist<span class="sc">$</span>dist_miles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -4304,9 +4342,13 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 </div>
 <ul>
-<li>What is the maximum distance? [28.98]</li>
-<li>How many vulnerable tracts are more than 15 miles from the nearest hospital? [25 Tracts]</li>
+<li>What is the maximum distance?</li>
 </ul>
+<p>[28.98]</p>
+<ul>
+<li>How many vulnerable tracts are more than 15 miles from the nearest hospital?</li>
+</ul>
+<p>[25 Tracts]</p>
 <hr>
 </section>
 <section id="step-5-identify-underserved-areas" class="level4">
@@ -4356,7 +4398,20 @@ Projected CRS: NAD83 / Conus Albers
 6 42053                   1 MULTIPOLYGON (((1359123 2169199, 1359918 2169341, 1…</code></pre>
 </div>
 </div>
-<p><strong>Questions to answer:</strong> - How many tracts are underserved? [25 Tracts] - What percentage of vulnerable tracts are underserved? [5.9%] - Does this surprise you? Why or why not? [No — because healthcare facilities are concentrated in urban regions, while the underserved tracts are primarily rural and sparsely populated, though small in number, they represent significant accessibility challenges.] —</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li>How many tracts are underserved?</li>
+</ul>
+<p>[25 Tracts]</p>
+<ul>
+<li>What percentage of vulnerable tracts are underserved?</li>
+</ul>
+<p>[5.9%]</p>
+<ul>
+<li>Does this surprise you? Why or why not?</li>
+</ul>
+<p>[No — because healthcare facilities are concentrated in urban regions, while the underserved tracts are primarily rural and sparsely populated, though small in number, they represent significant accessibility challenges.]</p>
+<hr>
 </section>
 <section id="step-6-aggregate-to-county-level" class="level4">
 <h4 class="anchored" data-anchor-id="step-6-aggregate-to-county-level">Step 6: Aggregate to County Level</h4>
@@ -4423,14 +4478,26 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 <p><strong>Required county-level statistics:</strong></p>
 <ul>
-<li>Number of vulnerable tracts</li>
-<li>Number of underserved tracts<br>
-</li>
-<li>Percentage of vulnerable tracts that are underserved</li>
-<li>Average distance to nearest hospital for vulnerable tracts</li>
-<li>Total vulnerable population</li>
+<li><p>Number of vulnerable tracts</p></li>
+<li><p>Number of underserved tracts</p></li>
+<li><p>Percentage of vulnerable tracts that are underserved</p></li>
+<li><p>Average distance to nearest hospital for vulnerable tracts</p></li>
+<li><p>Total vulnerable population</p></li>
 </ul>
-<p><strong>Questions to answer:</strong> - Which 5 counties have the highest percentage of underserved vulnerable tracts? [Sullivan County, Cameron County, Forest County, Clearfield County, Pike County] - Which counties have the most vulnerable people living far from hospitals? [Huntingdon County, Union County, Dauphin County, Clearfield County, Pike County] - Are there any patterns in where underserved counties are located? [Yes. Underserved counties are clustered in rural and mountainous regions of northern and western Pennsylvania, such as Sullivan, Cameron, Forest, and Clearfield Counties. These areas tend to have low population density and aging populations but few medical facilities, reflecting a classic rural accessibility gap. In contrast, eastern metropolitan counties around Philadelphia and the Harrisburg corridor have dense hospital networks and shorter average distances to care.] —</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li>Which 5 counties have the highest percentage of underserved vulnerable tracts?</li>
+</ul>
+<p>[Sullivan County, Cameron County, Forest County, Clearfield County, Pike County]</p>
+<ul>
+<li>Which counties have the most vulnerable people living far from hospitals?</li>
+</ul>
+<p>[Huntingdon County, Union County, Dauphin County, Clearfield County, Pike County]</p>
+<ul>
+<li>Are there any patterns in where underserved counties are located?</li>
+</ul>
+<p>[Yes. Underserved counties are clustered in rural and mountainous regions of northern and western Pennsylvania, such as Sullivan, Cameron, Forest, and Clearfield Counties. These areas tend to have low population density and aging populations but few medical facilities, reflecting a classic rural accessibility gap. In contrast, eastern metropolitan counties around Philadelphia and the Harrisburg corridor have dense hospital networks and shorter average distances to care.]</p>
+<hr>
 </section>
 <section id="step-7-create-summary-table" class="level4">
 <h4 class="anchored" data-anchor-id="step-7-create-summary-table">Step 7: Create Summary Table</h4>
@@ -4585,11 +4652,11 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 <p><strong>Requirements:</strong></p>
 <ul>
-<li>Use <code>knitr::kable()</code> or similar for formatting</li>
-<li>Include descriptive column names</li>
-<li>Format numbers appropriately (commas for population, percentages, etc.)</li>
-<li>Add an informative caption</li>
-<li>Sort by priority (you decide the metric)</li>
+<li><p>Use <code>knitr::kable()</code> or similar for formatting</p></li>
+<li><p>Include descriptive column names</p></li>
+<li><p>Format numbers appropriately (commas for population, percentages, etc.)</p></li>
+<li><p>Add an informative caption</p></li>
+<li><p>Sort by priority (you decide the metric)</p></li>
 </ul>
 <hr>
 </section>
@@ -4640,7 +4707,15 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 </div>
 </div>
-<p><strong>Requirements:</strong> - Fill counties by percentage of vulnerable tracts that are underserved - Include hospital locations as points - Use an appropriate color scheme - Include clear title, subtitle, and caption - Use <code>theme_void()</code> or similar clean theme - Add a legend with formatted labels</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li><p>Fill counties by percentage of vulnerable tracts that are underserved</p></li>
+<li><p>Include hospital locations as points</p></li>
+<li><p>Use an appropriate color scheme</p></li>
+<li><p>Include clear title, subtitle, and caption</p></li>
+<li><p>Use <code>theme_void()</code> or similar clean theme</p></li>
+<li><p>Add a legend with formatted labels</p></li>
+</ul>
 <hr>
 </section>
 <section id="map-2-detailed-vulnerability-map" class="level3">
@@ -4693,7 +4768,14 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 </div>
 </div>
-<p><strong>Requirements:</strong> - Show underserved vulnerable tracts in a contrasting color - Include county boundaries for context - Show hospital locations - Use appropriate visual hierarchy (what should stand out?) - Include informative title and subtitle</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li><p>Show underserved vulnerable tracts in a contrasting color</p></li>
+<li><p>Include county boundaries for context</p></li>
+<li><p>Show hospital locations</p></li>
+<li><p>Use appropriate visual hierarchy (what should stand out?)</p></li>
+<li><p>Include informative title and subtitle</p></li>
+</ul>
 <hr>
 </section>
 <section id="chart-distribution-analysis" class="level3">
@@ -4724,17 +4806,17 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 <p><strong>Suggested chart types:</strong></p>
 <ul>
-<li>Histogram or density plot of distances</li>
-<li>Box plot comparing distances across regions</li>
-<li>Bar chart of underserved tracts by county</li>
-<li>Scatter plot of distance vs. vulnerable population size</li>
+<li><p>Histogram or density plot of distances</p></li>
+<li><p>Box plot comparing distances across regions</p></li>
+<li><p>Bar chart of underserved tracts by county</p></li>
+<li><p>Scatter plot of distance vs. vulnerable population size</p></li>
 </ul>
 <p><strong>Requirements:</strong></p>
 <ul>
-<li>Clear axes labels with units</li>
-<li>Appropriate title</li>
-<li>Professional formatting</li>
-<li>Brief interpretation (1-2 sentences as a caption or in text)</li>
+<li><p>Clear axes labels with units</p></li>
+<li><p>Appropriate title</p></li>
+<li><p>Professional formatting</p></li>
+<li><p>Brief interpretation (1-2 sentences as a caption or in text)</p></li>
 </ul>
 <hr>
 </section>
@@ -4751,17 +4833,17 @@ Projected CRS: NAD83 / Conus Albers
 <h4 class="anchored" data-anchor-id="education-youth-services">Education &amp; Youth Services</h4>
 <p><strong>Option A: Educational Desert Analysis</strong></p>
 <ul>
-<li><strong>Data:</strong> Schools, Libraries, Recreation Centers, Census tracts (child population)</li>
-<li><strong>Question:</strong> “Which neighborhoods lack adequate educational infrastructure for children?”</li>
-<li><strong>Operations:</strong> Buffer schools/libraries (0.5 mile walking distance), identify coverage gaps, overlay with child population density</li>
-<li><strong>Policy relevance:</strong> School district planning, library placement, after-school program siting</li>
+<li><p><strong>Data:</strong> Schools, Libraries, Recreation Centers, Census tracts (child population)</p></li>
+<li><p><strong>Question:</strong> “Which neighborhoods lack adequate educational infrastructure for children?”</p></li>
+<li><p><strong>Operations:</strong> Buffer schools/libraries (0.5 mile walking distance), identify coverage gaps, overlay with child population density</p></li>
+<li><p><strong>Policy relevance:</strong> School district planning, library placement, after-school program siting</p></li>
 </ul>
 <p><strong>Option B: School Safety Zones</strong></p>
 <ul>
-<li><strong>Data:</strong> Schools, Crime Incidents, Bike Network</li>
-<li><strong>Question:</strong> “Are school zones safe for walking/biking, or are they crime hotspots?”</li>
-<li><strong>Operations:</strong> Buffer schools (1000ft safety zone), spatial join with crime incidents, assess bike infrastructure coverage</li>
-<li><strong>Policy relevance:</strong> Safe Routes to School programs, crossing guard placement</li>
+<li><p><strong>Data:</strong> Schools, Crime Incidents, Bike Network</p></li>
+<li><p><strong>Question:</strong> “Are school zones safe for walking/biking, or are they crime hotspots?”</p></li>
+<li><p><strong>Operations:</strong> Buffer schools (1000ft safety zone), spatial join with crime incidents, assess bike infrastructure coverage</p></li>
+<li><p><strong>Policy relevance:</strong> Safe Routes to School programs, crossing guard placement</p></li>
 </ul>
 <hr>
 </section>
@@ -4769,30 +4851,31 @@ Projected CRS: NAD83 / Conus Albers
 <h4 class="anchored">Environmental Justice</h4>
 <p><strong>Option C: Green Space Equity</strong></p>
 <ul>
-<li><strong>Data:</strong> Parks, Street Trees, Census tracts (race/income demographics)</li>
-<li><strong>Question:</strong> “Do low-income and minority neighborhoods have equitable access to green space?”</li>
-<li><strong>Operations:</strong> Buffer parks (10-minute walk = 0.5 mile), calculate tree canopy or park acreage per capita, compare by demographics</li>
+<li><p><strong>Data:</strong> Parks, Street Trees, Census tracts (race/income demographics)</p></li>
+<li><p><strong>Question:</strong> “Do low-income and minority neighborhoods have equitable access to green space?”</p></li>
+<li><p><strong>Operations:</strong> Buffer parks (10-minute walk = 0.5 mile), calculate tree canopy or park acreage per capita, compare by demographics</p></li>
 <li><h2 id="policy-relevance-climate-resilience-environmental-justice-urban-forestry-investment" class="anchored" data-anchor-id="environmental-justice"><strong>Policy relevance:</strong> Climate resilience, environmental justice, urban forestry investment</h2></li>
 </ul>
 </section>
 <section id="public-safety-justice" class="level4">
-<h4 class="anchored">Public Safety &amp; Justice</h4>
+<h4 class="anchored" data-anchor-id="public-safety-justice">Public Safety &amp; Justice</h4>
 <p><strong>Option D: Crime &amp; Community Resources</strong></p>
 <ul>
-<li><strong>Data:</strong> Crime Incidents, Recreation Centers, Libraries, Street Lights</li>
-<li><strong>Question:</strong> “Are high-crime areas underserved by community resources?”</li>
-<li><strong>Operations:</strong> Aggregate crime counts to census tracts or neighborhoods, count community resources per area, spatial correlation analysis</li>
-<li><h2 id="policy-relevance-community-investment-violence-prevention-strategies" class="anchored" data-anchor-id="public-safety-justice"><strong>Policy relevance:</strong> Community investment, violence prevention strategies</h2></li>
+<li><p><strong>Data:</strong> Crime Incidents, Recreation Centers, Libraries, Street Lights</p></li>
+<li><p><strong>Question:</strong> “Are high-crime areas underserved by community resources?”</p></li>
+<li><p><strong>Operations:</strong> Aggregate crime counts to census tracts or neighborhoods, count community resources per area, spatial correlation analysis</p></li>
+<li><p><strong>Policy relevance:</strong> Community investment, violence prevention strategies</p></li>
 </ul>
+<hr>
 </section>
 <section id="infrastructure-services" class="level4">
 <h4 class="anchored" data-anchor-id="infrastructure-services">Infrastructure &amp; Services</h4>
 <p><strong>Option E: Polling Place Accessibility</strong></p>
 <ul>
-<li><strong>Data:</strong> Polling Places, SEPTA stops, Census tracts (elderly population, disability rates)</li>
-<li><strong>Question:</strong> “Are polling places accessible for elderly and disabled voters?”</li>
-<li><strong>Operations:</strong> Buffer polling places and transit stops, identify vulnerable populations, find areas lacking access</li>
-<li><strong>Policy relevance:</strong> Voting rights, election infrastructure, ADA compliance</li>
+<li><p><strong>Data:</strong> Polling Places, SEPTA stops, Census tracts (elderly population, disability rates)</p></li>
+<li><p><strong>Question:</strong> “Are polling places accessible for elderly and disabled voters?”</p></li>
+<li><p><strong>Operations:</strong> Buffer polling places and transit stops, identify vulnerable populations, find areas lacking access</p></li>
+<li><p><strong>Policy relevance:</strong> Voting rights, election infrastructure, ADA compliance</p></li>
 </ul>
 <hr>
 </section>
@@ -4800,26 +4883,32 @@ Projected CRS: NAD83 / Conus Albers
 <h4 class="anchored" data-anchor-id="health-wellness">Health &amp; Wellness</h4>
 <p><strong>Option F: Recreation &amp; Population Health</strong></p>
 <ul>
-<li><strong>Data:</strong> Recreation Centers, Playgrounds, Parks, Census tracts (demographics)</li>
-<li><strong>Question:</strong> “Is lack of recreation access associated with vulnerable populations?”</li>
-<li><strong>Operations:</strong> Calculate recreation facilities per capita by neighborhood, buffer facilities for walking access, overlay with demographic indicators</li>
-<li><strong>Policy relevance:</strong> Public health investment, recreation programming, obesity prevention</li>
+<li><p><strong>Data:</strong> Recreation Centers, Playgrounds, Parks, Census tracts (demographics)</p></li>
+<li><p><strong>Question:</strong> “Is lack of recreation access associated with vulnerable populations?”</p></li>
+<li><p><strong>Operations:</strong> Calculate recreation facilities per capita by neighborhood, buffer facilities for walking access, overlay with demographic indicators</p></li>
+<li><p><strong>Policy relevance:</strong> Public health investment, recreation programming, obesity prevention</p></li>
 </ul>
 <hr>
 </section>
 <section id="emergency-services" class="level4">
 <h4 class="anchored" data-anchor-id="emergency-services">Emergency Services</h4>
-<p><strong>Option G: EMS Response Coverage</strong> - <strong>Data:</strong> Fire Stations, EMS stations, Population density, High-rise buildings - <strong>Question:</strong> “Are population-dense areas adequately covered by emergency services?” - <strong>Operations:</strong> Create service area buffers (5-minute drive = ~2 miles), assess population coverage, identify gaps in high-density areas - <strong>Policy relevance:</strong> Emergency preparedness, station siting decisions</p>
+<p><strong>Option G: EMS Response Coverage</strong></p>
+<ul>
+<li><p><strong>Data:</strong> Fire Stations, EMS stations, Population density, High-rise buildings</p></li>
+<li><p><strong>Question:</strong> “Are population-dense areas adequately covered by emergency services?”</p></li>
+<li><p><strong>Operations:</strong> Create service area buffers (5-minute drive = ~2 miles), assess population coverage, identify gaps in high-density areas</p></li>
+<li><p><strong>Policy relevance:</strong> Emergency preparedness, station siting decisions</p></li>
+</ul>
 <hr>
 </section>
 <section id="arts-culture" class="level4">
 <h4 class="anchored" data-anchor-id="arts-culture">Arts &amp; Culture</h4>
 <p><strong>Option H: Cultural Asset Distribution</strong></p>
 <ul>
-<li><strong>Data:</strong> Public Art, Museums, Historic sites/markers, Neighborhoods</li>
-<li><strong>Question:</strong> “Do all neighborhoods have equitable access to cultural amenities?”</li>
-<li><strong>Operations:</strong> Count cultural assets per neighborhood, normalize by population, compare distribution across demographic groups</li>
-<li><strong>Policy relevance:</strong> Cultural equity, tourism, quality of life, neighborhood identity</li>
+<li><p><strong>Data:</strong> Public Art, Museums, Historic sites/markers, Neighborhoods</p></li>
+<li><p><strong>Question:</strong> “Do all neighborhoods have equitable access to cultural amenities?”</p></li>
+<li><p><strong>Operations:</strong> Count cultural assets per neighborhood, normalize by population, compare distribution across demographic groups</p></li>
+<li><p><strong>Policy relevance:</strong> Cultural equity, tourism, quality of life, neighborhood identity</p></li>
 </ul>
 <hr>
 </section>
@@ -4827,22 +4916,31 @@ Projected CRS: NAD83 / Conus Albers
 <section id="data-sources" class="level3">
 <h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
 <p><strong>OpenDataPhilly:</strong> https://opendataphilly.org/datasets/ - Most datasets available as GeoJSON, Shapefile, or CSV with coordinates - Always check the Metadata for a data dictionary of the fields.</p>
-<p><strong>Additional Sources:</strong> - <strong>Pennsylvania Open Data:</strong> https://data.pa.gov/ - <strong>Census Bureau (via tidycensus):</strong> Demographics, economic indicators, commute patterns - <strong>TIGER/Line (via tigris):</strong> Geographic boundaries</p>
+<p><strong>Additional Sources:</strong></p>
+<ul>
+<li><strong>Pennsylvania Open Data:</strong> https://data.pa.gov/</li>
+<li><strong>Census Bureau (via tidycensus):</strong> Demographics, economic indicators, commute patterns</li>
+<li><strong>TIGER/Line (via tigris):</strong> Geographic boundaries</li>
+</ul>
 </section>
 <section id="recommended-starting-points" class="level3">
 <h3 class="anchored" data-anchor-id="recommended-starting-points">Recommended Starting Points</h3>
 <p><strong>If you’re feeling confident:</strong> Choose an advanced challenge with multiple data layers. <strong>If you are a beginner, choose something more manageable that helps you understand the basics</strong></p>
-<p><strong>If you have a different idea:</strong> Propose your own question! Just make sure: - You can access the spatial data - You can perform at least 2 spatial operations</p>
+<p><strong>If you have a different idea:</strong> Propose your own question! Just make sure:</p>
+<ul>
+<li>You can access the spatial data</li>
+<li>You can perform at least 2 spatial operations</li>
+</ul>
 </section>
 <section id="your-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="your-analysis">Your Analysis</h3>
 <p><strong>Your Task:</strong></p>
 <ol type="1">
-<li><strong>Find and load additional data</strong>
+<li><p><strong>Find and load additional data</strong></p>
 <ul>
-<li>Document your data source</li>
-<li>Check and standardize the CRS</li>
-<li>Provide basic summary statistics</li>
+<li><p>Document your data source</p></li>
+<li><p>Check and standardize the CRS</p></li>
+<li><p>Provide basic summary statistics</p></li>
 </ul></li>
 </ol>
 <div class="cell">
@@ -4860,7 +4958,25 @@ Bounding box:  xmin: -75.2563 ymin: 39.90444 xmax: -74.96944 ymax: 40.12284
 Geodetic CRS:  WGS 84</code></pre>
 </div>
 </div>
-<p><strong>Questions to answer:</strong> - What dataset did you choose and why? [Dataset chosen: Philadelphia Parks &amp; Recreation Program Sites Reason for choice: This dataset was selected to analyze green space accessibility and recreation equity in Philadelphia. It represents public parks and recreation facilities which is a key indicator of environmental and community well-being. By examining their spatial distribution relative to neighborhood demographics, we can assess whether low-income communities have equitable access to recreational opportunities.] - What is the data source and date? [Data were obtained from OpenDataPhilly – PPR Program Sites , published and maintained by Philadelphia Parks &amp; Recreation. The dataset was accessed and downloaded in October 2025.] - How many features does it contain? [- Number of features: 171 program sites - Geometry type: Point - Coordinate Reference System (CRS): WGS 84 (EPSG:4326) - Extent: Longitude -75.2563 to -74.9694, Latitude 39.9044 to 40.1228] What CRS is it in? Did you need to transform it? [The dataset was originally in WGS 84 (geographic coordinates), which is not ideal for distance-based analysis. It was reprojected to EPSG:5070 (NAD83 / Conus Albers) for accurate spatial measurement and buffering operations.] —</p>
+<p><strong>Questions to answer:</strong></p>
+<ul>
+<li>What dataset did you choose and why?</li>
+</ul>
+<p>[Dataset chosen: Philadelphia Parks &amp; Recreation Program Sites]</p>
+<p>Reason for choice: [This dataset was selected to analyze green space accessibility and recreation equity in Philadelphia. It represents public parks and recreation facilities which is a key indicator of environmental and community well-being. By examining their spatial distribution relative to neighborhood demographics, we can assess whether low-income communities have equitable access to recreational opportunities.]</p>
+<ul>
+<li>What is the data source and date?</li>
+</ul>
+<p>[Data were obtained from OpenDataPhilly – PPR Program Sites, published and maintained by Philadelphia Parks &amp; Recreation. The dataset was accessed and downloaded in October 2025.]</p>
+<ul>
+<li>How many features does it contain?</li>
+</ul>
+<p>[- Number of features: 171 program sites - Geometry type: Point - Coordinate Reference System (CRS): WGS 84 (EPSG:4326) - Extent: Longitude -75.2563 to -74.9694, Latitude 39.9044 to 40.1228]</p>
+<ul>
+<li>What CRS is it in? Did you need to transform it?</li>
+</ul>
+<p>[The dataset was originally in WGS 84 (geographic coordinates), which is not ideal for distance-based analysis. It was reprojected to EPSG:5070 (NAD83 / Conus Albers) for accurate spatial measurement and buffering operations.]</p>
+<hr>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>parks <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(parks, <span class="dv">5070</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -4868,14 +4984,29 @@ Geodetic CRS:  WGS 84</code></pre>
 <li><strong>Pose a research question</strong></li>
 </ol>
 <p>Write a clear research statement that your analysis will answer.</p>
-<p><strong>Examples:</strong> - “Do vulnerable tracts have adequate public transit access to hospitals?” - “Are EMS stations appropriately located near vulnerable populations?” - “Do areas with low vehicle access have worse hospital access?”</p>
-<p><strong>Research Question</strong>: Do low-income neighborhoods in Philadelphia have less access to parks and recreation facilities compared to higher-income areas?</p>
-<p>Explanation: This question investigates whether green space accessibility is distributed equitably across socioeconomic groups in Philadelphia. By analyzing the spatial relationship between parks and recreation sites and census tract median income, this study aims to identify whether environmental and recreational resources are disproportionately concentrated in wealthier neighborhoods which is an important issue for urban equity and public health planning. —</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><p>“Do vulnerable tracts have adequate public transit access to hospitals?”</p></li>
+<li><p>“Are EMS stations appropriately located near vulnerable populations?”</p></li>
+<li><p>“Do areas with low vehicle access have worse hospital access?”</p></li>
+</ul>
+<p><strong>Research Question</strong>:</p>
+<p>Do low-income neighborhoods in Philadelphia have less access to parks and recreation facilities compared to higher-income areas?</p>
+<p>Explanation:</p>
+<p>This question investigates whether green space accessibility is distributed equitably across socioeconomic groups in Philadelphia. By analyzing the spatial relationship between parks and recreation sites and census tract median income, this study aims to identify whether environmental and recreational resources are disproportionately concentrated in wealthier neighborhoods which is an important issue for urban equity and public health planning. —</p>
 <ol start="3" type="1">
 <li><strong>Conduct spatial analysis</strong></li>
 </ol>
 <p>Use at least TWO spatial operations to answer your research question.</p>
-<p><strong>Required operations (choose 2+):</strong> - Buffers - Spatial joins - Spatial filtering with predicates - Distance calculations - Intersections or unions - Point-in-polygon aggregation</p>
+<p><strong>Required operations (choose 2+):</strong></p>
+<ul>
+<li><p>Buffers</p></li>
+<li><p>Spatial joins</p></li>
+<li><p>Spatial filtering with predicates</p></li>
+<li><p>Distance calculations</p></li>
+<li><p>Intersections or unions</p></li>
+<li><p>Point-in-polygon aggregation</p></li>
+</ul>
 <p><strong>Your Task:</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4989,7 +5120,14 @@ Geodetic CRS:  WGS 84</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Analysis requirements:</strong> - Clear code comments explaining each step - Appropriate CRS transformations - Summary statistics or counts - At least one map showing your findings - Brief interpretation of results (3-5 sentences)</p>
+<p><strong>Analysis requirements:</strong></p>
+<ul>
+<li><p>Clear code comments explaining each step</p></li>
+<li><p>Appropriate CRS transformations</p></li>
+<li><p>Summary statistics or counts</p></li>
+<li><p>At least one map showing your findings</p></li>
+<li><p>Brief interpretation of results (3-5 sentences)</p></li>
+</ul>
 <p><strong>Your interpretation:</strong></p>
 <p>[Using a 0.5-mile buffer as a walkable access threshold, low-income tracts exhibit a lower park access rate than high-income tracts, and they also tend to have fewer parks per tract on average. The map highlights clusters of low-income tracts without nearby parks, pointing to potential recreational access gaps. These findings suggest that future park investments and programming should prioritize underserved low-income neighborhoods to improve equitable access to green space and related health benefits.]</p>
 </section>
@@ -4998,9 +5136,8 @@ Geodetic CRS:  WGS 84</code></pre>
 <h2 class="anchored" data-anchor-id="finally---a-few-comments-about-your-incorporation-of-feedback">Finally - A few comments about your incorporation of feedback!</h2>
 <p>Take a few moments to clean up your markdown document and then write a line or two or three about how you may have incorporated feedback that you recieved after your first assignment.</p>
 <p>Comments:</p>
-</section>
-<section id="after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." class="level2">
-<h2 class="anchored" data-anchor-id="after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally.">After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.</h2>
+<p>After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.</p>
+<hr>
 </section>
 <section id="submission-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="submission-requirements">Submission Requirements</h2>
