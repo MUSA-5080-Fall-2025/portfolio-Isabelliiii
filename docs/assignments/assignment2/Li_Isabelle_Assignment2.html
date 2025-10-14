@@ -3998,7 +3998,7 @@ vertical-align: -.125em;
   <li><a href="#your-analysis" id="toc-your-analysis" class="nav-link" data-scroll-target="#your-analysis">Your Analysis</a></li>
   </ul></li>
   <li><a href="#finally---a-few-comments-about-your-incorporation-of-feedback" id="toc-finally---a-few-comments-about-your-incorporation-of-feedback" class="nav-link" data-scroll-target="#finally---a-few-comments-about-your-incorporation-of-feedback">Finally - A few comments about your incorporation of feedback!</a></li>
-  <li><a href="#after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." id="toc-after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." class="nav-link" data-scroll-target="#after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally.">[After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.]</a></li>
+  <li><a href="#after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." id="toc-after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." class="nav-link" data-scroll-target="#after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally.">After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.</a></li>
   <li><a href="#submission-requirements" id="toc-submission-requirements" class="nav-link" data-scroll-target="#submission-requirements">Submission Requirements</a></li>
   </ul>
 </nav>
@@ -4044,7 +4044,14 @@ vertical-align: -.125em;
 
 <section id="assignment-overview" class="level2">
 <h2 class="anchored" data-anchor-id="assignment-overview">Assignment Overview</h2>
-<p><strong>Learning Objectives:</strong> - Apply spatial operations to answer policy-relevant research questions - Integrate census demographic data with spatial analysis - Create publication-quality visualizations and maps - Work with spatial data from multiple sources - Communicate findings effectively for policy audiences</p>
+<p><strong>Learning Objectives:</strong></p>
+<ul>
+<li>Apply spatial operations to answer policy-relevant research questions</li>
+<li>Integrate census demographic data with spatial analysis</li>
+<li>Create publication-quality visualizations and maps</li>
+<li>Work with spatial data from multiple sources</li>
+<li>Communicate findings effectively for policy audiences</li>
+</ul>
 <hr>
 </section>
 <section id="part-1-healthcare-access-for-vulnerable-populations" class="level2">
@@ -4059,7 +4066,12 @@ vertical-align: -.125em;
 <p>Complete the following analysis, documenting each step with code and brief explanations:</p>
 <section id="step-1-data-collection-5-points" class="level4">
 <h4 class="anchored" data-anchor-id="step-1-data-collection-5-points">Step 1: Data Collection (5 points)</h4>
-<p>Load the required spatial data: - Pennsylvania county boundaries - Pennsylvania hospitals (from lecture data) - Pennsylvania census tracts</p>
+<p>Load the required spatial data:</p>
+<ul>
+<li>Pennsylvania county boundaries</li>
+<li>Pennsylvania hospitals (from lecture data)</li>
+<li>Pennsylvania census tracts</li>
+</ul>
 <p><strong>Your Task:</strong></p>
 <p><strong>Questions to answer:</strong> - How many hospitals are in your dataset? [223 hospitals] - How many census tracts? [17 districts] - What coordinate reference system is each dataset in? [Counties: WGS 84 / Pseudo-Mercator (EPSG 3857) Districts &amp; Hospitals: WGS 84 (EPSG 4326)] —</p>
 </section>
@@ -4278,7 +4290,12 @@ Projected CRS: NAD83 / Conus Albers
 10 MULTIPOLYGON (((1504805 204...</code></pre>
 </div>
 </div>
-<p><strong>Requirements:</strong> - Use an appropriate projected coordinate system for Pennsylvania - Calculate distances in miles - Explain why you chose your projection</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Use an appropriate projected coordinate system for Pennsylvania</li>
+<li>Calculate distances in miles</li>
+<li>Explain why you chose your projection</li>
+</ul>
 <p><strong>Questions to answer:</strong> - What is the average distance to the nearest hospital for vulnerable tracts?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vulnerable_with_dist<span class="sc">$</span>dist_miles, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4404,8 +4421,15 @@ Projected CRS: NAD83 / Conus Albers
 10        6.976864        2532</code></pre>
 </div>
 </div>
-<p><strong>Required county-level statistics:</strong> - Number of vulnerable tracts - Number of underserved tracts<br>
-- Percentage of vulnerable tracts that are underserved - Average distance to nearest hospital for vulnerable tracts - Total vulnerable population</p>
+<p><strong>Required county-level statistics:</strong></p>
+<ul>
+<li>Number of vulnerable tracts</li>
+<li>Number of underserved tracts<br>
+</li>
+<li>Percentage of vulnerable tracts that are underserved</li>
+<li>Average distance to nearest hospital for vulnerable tracts</li>
+<li>Total vulnerable population</li>
+</ul>
 <p><strong>Questions to answer:</strong> - Which 5 counties have the highest percentage of underserved vulnerable tracts? [Sullivan County, Cameron County, Forest County, Clearfield County, Pike County] - Which counties have the most vulnerable people living far from hospitals? [Huntingdon County, Union County, Dauphin County, Clearfield County, Pike County] - Are there any patterns in where underserved counties are located? [Yes. Underserved counties are clustered in rural and mountainous regions of northern and western Pennsylvania, such as Sullivan, Cameron, Forest, and Clearfield Counties. These areas tend to have low population density and aging populations but few medical facilities, reflecting a classic rural accessibility gap. In contrast, eastern metropolitan counties around Philadelphia and the Harrisburg corridor have dense hospital networks and shorter average distances to care.] —</p>
 </section>
 <section id="step-7-create-summary-table" class="level4">
@@ -4559,7 +4583,14 @@ Projected CRS: NAD83 / Conus Albers
 </table>
 </div>
 </div>
-<p><strong>Requirements:</strong> - Use <code>knitr::kable()</code> or similar for formatting - Include descriptive column names - Format numbers appropriately (commas for population, percentages, etc.) - Add an informative caption - Sort by priority (you decide the metric)</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Use <code>knitr::kable()</code> or similar for formatting</li>
+<li>Include descriptive column names</li>
+<li>Format numbers appropriately (commas for population, percentages, etc.)</li>
+<li>Add an informative caption</li>
+<li>Sort by priority (you decide the metric)</li>
+</ul>
 <hr>
 </section>
 </section>
@@ -4691,8 +4722,20 @@ Projected CRS: NAD83 / Conus Albers
 </div>
 </div>
 </div>
-<p><strong>Suggested chart types:</strong> - Histogram or density plot of distances - Box plot comparing distances across regions - Bar chart of underserved tracts by county - Scatter plot of distance vs. vulnerable population size</p>
-<p><strong>Requirements:</strong> - Clear axes labels with units - Appropriate title - Professional formatting - Brief interpretation (1-2 sentences as a caption or in text)</p>
+<p><strong>Suggested chart types:</strong></p>
+<ul>
+<li>Histogram or density plot of distances</li>
+<li>Box plot comparing distances across regions</li>
+<li>Bar chart of underserved tracts by county</li>
+<li>Scatter plot of distance vs. vulnerable population size</li>
+</ul>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Clear axes labels with units</li>
+<li>Appropriate title</li>
+<li>Professional formatting</li>
+<li>Brief interpretation (1-2 sentences as a caption or in text)</li>
+</ul>
 <hr>
 </section>
 </section>
@@ -4700,32 +4743,68 @@ Projected CRS: NAD83 / Conus Albers
 <h2 class="anchored" data-anchor-id="part-3-bring-your-own-data-analysis">Part 3: Bring Your Own Data Analysis</h2>
 <p>Choose your own additional spatial dataset and conduct a supplementary analysis.</p>
 <section id="challenge-options" class="level3">
-<h3 class="anchored" data-anchor-id="challenge-options">Challenge Options</h3>
+<h3 class="anchored">Challenge Options</h3>
 <p>Choose ONE of the following challenge exercises, or propose your own research question using OpenDataPhilly data (https://opendataphilly.org/datasets/).</p>
 <p><strong>Note these are just loose suggestions to spark ideas - follow or make your own as the data permits and as your ideas evolve. This analysis should include bringing in your own dataset, ensuring the projection/CRS of your layers align and are appropriate for the analysis (not lat/long or geodetic coordinate systems). The analysis portion should include some combination of spatial and attribute operations to answer a relatively straightforward question</strong></p>
 <hr>
 <section id="education-youth-services" class="level4">
 <h4 class="anchored" data-anchor-id="education-youth-services">Education &amp; Youth Services</h4>
-<p><strong>Option A: Educational Desert Analysis</strong> - <strong>Data:</strong> Schools, Libraries, Recreation Centers, Census tracts (child population) - <strong>Question:</strong> “Which neighborhoods lack adequate educational infrastructure for children?” - <strong>Operations:</strong> Buffer schools/libraries (0.5 mile walking distance), identify coverage gaps, overlay with child population density - <strong>Policy relevance:</strong> School district planning, library placement, after-school program siting</p>
-<p><strong>Option B: School Safety Zones</strong> - <strong>Data:</strong> Schools, Crime Incidents, Bike Network - <strong>Question:</strong> “Are school zones safe for walking/biking, or are they crime hotspots?” - <strong>Operations:</strong> Buffer schools (1000ft safety zone), spatial join with crime incidents, assess bike infrastructure coverage - <strong>Policy relevance:</strong> Safe Routes to School programs, crossing guard placement</p>
+<p><strong>Option A: Educational Desert Analysis</strong></p>
+<ul>
+<li><strong>Data:</strong> Schools, Libraries, Recreation Centers, Census tracts (child population)</li>
+<li><strong>Question:</strong> “Which neighborhoods lack adequate educational infrastructure for children?”</li>
+<li><strong>Operations:</strong> Buffer schools/libraries (0.5 mile walking distance), identify coverage gaps, overlay with child population density</li>
+<li><strong>Policy relevance:</strong> School district planning, library placement, after-school program siting</li>
+</ul>
+<p><strong>Option B: School Safety Zones</strong></p>
+<ul>
+<li><strong>Data:</strong> Schools, Crime Incidents, Bike Network</li>
+<li><strong>Question:</strong> “Are school zones safe for walking/biking, or are they crime hotspots?”</li>
+<li><strong>Operations:</strong> Buffer schools (1000ft safety zone), spatial join with crime incidents, assess bike infrastructure coverage</li>
+<li><strong>Policy relevance:</strong> Safe Routes to School programs, crossing guard placement</li>
+</ul>
 <hr>
 </section>
 <section id="environmental-justice" class="level4">
-<h4 class="anchored" data-anchor-id="environmental-justice">Environmental Justice</h4>
-<p><strong>Option C: Green Space Equity</strong> - <strong>Data:</strong> Parks, Street Trees, Census tracts (race/income demographics) - <strong>Question:</strong> “Do low-income and minority neighborhoods have equitable access to green space?” - <strong>Operations:</strong> Buffer parks (10-minute walk = 0.5 mile), calculate tree canopy or park acreage per capita, compare by demographics - <strong>Policy relevance:</strong> Climate resilience, environmental justice, urban forestry investment —</p>
+<h4 class="anchored">Environmental Justice</h4>
+<p><strong>Option C: Green Space Equity</strong></p>
+<ul>
+<li><strong>Data:</strong> Parks, Street Trees, Census tracts (race/income demographics)</li>
+<li><strong>Question:</strong> “Do low-income and minority neighborhoods have equitable access to green space?”</li>
+<li><strong>Operations:</strong> Buffer parks (10-minute walk = 0.5 mile), calculate tree canopy or park acreage per capita, compare by demographics</li>
+<li><h2 id="policy-relevance-climate-resilience-environmental-justice-urban-forestry-investment" class="anchored" data-anchor-id="environmental-justice"><strong>Policy relevance:</strong> Climate resilience, environmental justice, urban forestry investment</h2></li>
+</ul>
 </section>
 <section id="public-safety-justice" class="level4">
-<h4 class="anchored" data-anchor-id="public-safety-justice">Public Safety &amp; Justice</h4>
-<p><strong>Option D: Crime &amp; Community Resources</strong> - <strong>Data:</strong> Crime Incidents, Recreation Centers, Libraries, Street Lights - <strong>Question:</strong> “Are high-crime areas underserved by community resources?” - <strong>Operations:</strong> Aggregate crime counts to census tracts or neighborhoods, count community resources per area, spatial correlation analysis - <strong>Policy relevance:</strong> Community investment, violence prevention strategies —</p>
+<h4 class="anchored">Public Safety &amp; Justice</h4>
+<p><strong>Option D: Crime &amp; Community Resources</strong></p>
+<ul>
+<li><strong>Data:</strong> Crime Incidents, Recreation Centers, Libraries, Street Lights</li>
+<li><strong>Question:</strong> “Are high-crime areas underserved by community resources?”</li>
+<li><strong>Operations:</strong> Aggregate crime counts to census tracts or neighborhoods, count community resources per area, spatial correlation analysis</li>
+<li><h2 id="policy-relevance-community-investment-violence-prevention-strategies" class="anchored" data-anchor-id="public-safety-justice"><strong>Policy relevance:</strong> Community investment, violence prevention strategies</h2></li>
+</ul>
 </section>
 <section id="infrastructure-services" class="level4">
 <h4 class="anchored" data-anchor-id="infrastructure-services">Infrastructure &amp; Services</h4>
-<p><strong>Option E: Polling Place Accessibility</strong> - <strong>Data:</strong> Polling Places, SEPTA stops, Census tracts (elderly population, disability rates) - <strong>Question:</strong> “Are polling places accessible for elderly and disabled voters?” - <strong>Operations:</strong> Buffer polling places and transit stops, identify vulnerable populations, find areas lacking access - <strong>Policy relevance:</strong> Voting rights, election infrastructure, ADA compliance</p>
+<p><strong>Option E: Polling Place Accessibility</strong></p>
+<ul>
+<li><strong>Data:</strong> Polling Places, SEPTA stops, Census tracts (elderly population, disability rates)</li>
+<li><strong>Question:</strong> “Are polling places accessible for elderly and disabled voters?”</li>
+<li><strong>Operations:</strong> Buffer polling places and transit stops, identify vulnerable populations, find areas lacking access</li>
+<li><strong>Policy relevance:</strong> Voting rights, election infrastructure, ADA compliance</li>
+</ul>
 <hr>
 </section>
 <section id="health-wellness" class="level4">
 <h4 class="anchored" data-anchor-id="health-wellness">Health &amp; Wellness</h4>
-<p><strong>Option F: Recreation &amp; Population Health</strong> - <strong>Data:</strong> Recreation Centers, Playgrounds, Parks, Census tracts (demographics) - <strong>Question:</strong> “Is lack of recreation access associated with vulnerable populations?” - <strong>Operations:</strong> Calculate recreation facilities per capita by neighborhood, buffer facilities for walking access, overlay with demographic indicators - <strong>Policy relevance:</strong> Public health investment, recreation programming, obesity prevention</p>
+<p><strong>Option F: Recreation &amp; Population Health</strong></p>
+<ul>
+<li><strong>Data:</strong> Recreation Centers, Playgrounds, Parks, Census tracts (demographics)</li>
+<li><strong>Question:</strong> “Is lack of recreation access associated with vulnerable populations?”</li>
+<li><strong>Operations:</strong> Calculate recreation facilities per capita by neighborhood, buffer facilities for walking access, overlay with demographic indicators</li>
+<li><strong>Policy relevance:</strong> Public health investment, recreation programming, obesity prevention</li>
+</ul>
 <hr>
 </section>
 <section id="emergency-services" class="level4">
@@ -4735,7 +4814,13 @@ Projected CRS: NAD83 / Conus Albers
 </section>
 <section id="arts-culture" class="level4">
 <h4 class="anchored" data-anchor-id="arts-culture">Arts &amp; Culture</h4>
-<p><strong>Option H: Cultural Asset Distribution</strong> - <strong>Data:</strong> Public Art, Museums, Historic sites/markers, Neighborhoods - <strong>Question:</strong> “Do all neighborhoods have equitable access to cultural amenities?” - <strong>Operations:</strong> Count cultural assets per neighborhood, normalize by population, compare distribution across demographic groups - <strong>Policy relevance:</strong> Cultural equity, tourism, quality of life, neighborhood identity</p>
+<p><strong>Option H: Cultural Asset Distribution</strong></p>
+<ul>
+<li><strong>Data:</strong> Public Art, Museums, Historic sites/markers, Neighborhoods</li>
+<li><strong>Question:</strong> “Do all neighborhoods have equitable access to cultural amenities?”</li>
+<li><strong>Operations:</strong> Count cultural assets per neighborhood, normalize by population, compare distribution across demographic groups</li>
+<li><strong>Policy relevance:</strong> Cultural equity, tourism, quality of life, neighborhood identity</li>
+</ul>
 <hr>
 </section>
 </section>
@@ -4912,9 +4997,10 @@ Geodetic CRS:  WGS 84</code></pre>
 <section id="finally---a-few-comments-about-your-incorporation-of-feedback" class="level2">
 <h2 class="anchored" data-anchor-id="finally---a-few-comments-about-your-incorporation-of-feedback">Finally - A few comments about your incorporation of feedback!</h2>
 <p>Take a few moments to clean up your markdown document and then write a line or two or three about how you may have incorporated feedback that you recieved after your first assignment.</p>
+<p>Comments:</p>
 </section>
 <section id="after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally." class="level2">
-<h2 class="anchored" data-anchor-id="after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally.">[After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.]</h2>
+<h2 class="anchored" data-anchor-id="after-receiving-feedback-on-my-first-assignment-i-focused-on-improving-clarity-and-organization.-i-combined-all-library-calls-into-one-hidden-setup-block-and-removed-unnecessary-print-outputs.-i-also-added-clearer-explanations-and-captions-so-the-analysis-reads-more-smoothly-and-professionally.">After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.</h2>
 </section>
 <section id="submission-requirements" class="level2">
 <h2 class="anchored" data-anchor-id="submission-requirements">Submission Requirements</h2>

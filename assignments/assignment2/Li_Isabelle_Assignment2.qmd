@@ -18,6 +18,7 @@ execute:
 ## Assignment Overview
 
 **Learning Objectives:**
+
 - Apply spatial operations to answer policy-relevant research questions
 - Integrate census demographic data with spatial analysis
 - Create publication-quality visualizations and maps
@@ -41,6 +42,7 @@ Complete the following analysis, documenting each step with code and brief expla
 #### Step 1: Data Collection (5 points)
 
 Load the required spatial data:
+
 - Pennsylvania county boundaries
 - Pennsylvania hospitals (from lecture data)
 - Pennsylvania census tracts
@@ -255,6 +257,7 @@ top_farthest
 ```
 
 **Requirements:**
+
 - Use an appropriate projected coordinate system for Pennsylvania
 - Calculate distances in miles
 - Explain why you chose your projection
@@ -359,6 +362,7 @@ head(out_tbl, 10)
 ```
 
 **Required county-level statistics:**
+
 - Number of vulnerable tracts
 - Number of underserved tracts  
 - Percentage of vulnerable tracts that are underserved
@@ -414,6 +418,7 @@ knitr::kable(
 ```
 
 **Requirements:**
+
 - Use `knitr::kable()` or similar for formatting
 - Include descriptive column names
 - Format numbers appropriately (commas for population, percentages, etc.)
@@ -556,12 +561,14 @@ p_hist
 ```
 
 **Suggested chart types:**
+
 - Histogram or density plot of distances
 - Box plot comparing distances across regions
 - Bar chart of underserved tracts by county
 - Scatter plot of distance vs. vulnerable population size
 
 **Requirements:**
+
 - Clear axes labels with units
 - Appropriate title
 - Professional formatting
@@ -584,12 +591,14 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 #### Education & Youth Services
 
 **Option A: Educational Desert Analysis**
+
 - **Data:** Schools, Libraries, Recreation Centers, Census tracts (child population)
 - **Question:** "Which neighborhoods lack adequate educational infrastructure for children?"
 - **Operations:** Buffer schools/libraries (0.5 mile walking distance), identify coverage gaps, overlay with child population density
 - **Policy relevance:** School district planning, library placement, after-school program siting
 
 **Option B: School Safety Zones**
+
 - **Data:** Schools, Crime Incidents, Bike Network
 - **Question:** "Are school zones safe for walking/biking, or are they crime hotspots?"
 - **Operations:** Buffer schools (1000ft safety zone), spatial join with crime incidents, assess bike infrastructure coverage
@@ -600,6 +609,7 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 #### Environmental Justice
 
 **Option C: Green Space Equity** 
+
 - **Data:** Parks, Street Trees, Census tracts (race/income demographics)
 - **Question:** "Do low-income and minority neighborhoods have equitable access to green space?"
 - **Operations:** Buffer parks (10-minute walk = 0.5 mile), calculate tree canopy or park acreage per capita, compare by demographics
@@ -609,6 +619,7 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 #### Public Safety & Justice
 
 **Option D: Crime & Community Resources**
+
 - **Data:** Crime Incidents, Recreation Centers, Libraries, Street Lights
 - **Question:** "Are high-crime areas underserved by community resources?"
 - **Operations:** Aggregate crime counts to census tracts or neighborhoods, count community resources per area, spatial correlation analysis
@@ -618,6 +629,7 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 #### Infrastructure & Services
 
 **Option E: Polling Place Accessibility**
+
 - **Data:** Polling Places, SEPTA stops, Census tracts (elderly population, disability rates)
 - **Question:** "Are polling places accessible for elderly and disabled voters?"
 - **Operations:** Buffer polling places and transit stops, identify vulnerable populations, find areas lacking access
@@ -628,6 +640,7 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 #### Health & Wellness
 
 **Option F: Recreation & Population Health**
+
 - **Data:** Recreation Centers, Playgrounds, Parks, Census tracts (demographics)
 - **Question:** "Is lack of recreation access associated with vulnerable populations?"
 - **Operations:** Calculate recreation facilities per capita by neighborhood, buffer facilities for walking access, overlay with demographic indicators
@@ -648,6 +661,7 @@ Choose ONE of the following challenge exercises, or propose your own research qu
 #### Arts & Culture
 
 **Option H: Cultural Asset Distribution**
+
 - **Data:** Public Art, Museums, Historic sites/markers, Neighborhoods
 - **Question:** "Do all neighborhoods have equitable access to cultural amenities?"
 - **Operations:** Count cultural assets per neighborhood, normalize by population, compare distribution across demographic groups
@@ -861,7 +875,9 @@ These findings suggest that future park investments and programming should prior
 ## Finally - A few comments about your incorporation of feedback!
 Take a few moments to clean up your markdown document and then write a line or two or three about how you may have incorporated feedback that you recieved after your first assignment. 
 
-[After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.]
+Comments:
+
+After receiving feedback on my first assignment, I focused on improving clarity and organization. I combined all library calls into one hidden setup block and removed unnecessary print outputs. I also added clearer explanations and captions so the analysis reads more smoothly and professionally.
 ---
 
 ## Submission Requirements
