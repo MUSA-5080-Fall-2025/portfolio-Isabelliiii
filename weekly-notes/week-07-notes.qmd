@@ -1,0 +1,74 @@
+---
+title: "Week 7 Notes - Model Diagnostics & Spatial Autocorrelation"
+date: "2025-10-20"
+---
+
+## Key Concepts Learned
+
+When use tigris or tidycensus functions, they show download progress by default. 
+```{r}
+#| eval: false
+#| echo: true
+```
+
+*Model Errors*
+
+Random errors(good)
+
+- No systematic pattern
+- Scattered across space
+- Prediction equally good everywhere
+- Model captures key relationships
+
+Clustered errors(bad)
+
+- Spatial pattern visible
+- Under/over-predict in areas
+- Model misses something about location
+- Need more spatial features
+
+*Defining "Neighbors"*
+
+Contiguity
+
+- Polygons that shares a border
+- Queen vs. Rook
+
+Distance
+
+- All within X meters
+- Fixed threshold
+
+k-Nearest
+
+- Closest k points
+- Adaptive distance
+
+*Moran's I*
+
+If moran's high (errors clustered)
+
+1. Add more spatial features
+
+- Try different buffer sizes
+- Include more amenities/disamenities
+- Create neighborhood-specific variables
+
+2. Try spatial fixed effects
+
+- Neighborhood dummies
+- Grid cell dummies
+
+3. Consider spatial regression models
+
+- Spatial lag model
+- Spatial error model
+
+
+## Coding Techniques
+
+Create the spatial lag of error scatter plot
+
+library(spdep)
+
+
