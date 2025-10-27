@@ -45,6 +45,8 @@ website:
             text: "assignment1"
           - href: assignments/assignment2/Li_Isabelle_Assignment2.qmd
             text: "assignment2"
+          - href: assignments/midterm/Li_Isabelle_Appendix.qmd
+            text: "midterm"
 
 format:
   html:

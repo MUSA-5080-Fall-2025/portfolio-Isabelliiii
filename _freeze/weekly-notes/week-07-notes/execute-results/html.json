@@ -1,0 +1,15 @@
+{
+  "hash": "58420370c8b8cb093992d18cae4a1b9c",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Week 7 Notes - Model Diagnostics & Spatial Autocorrelation\"\ndate: \"2025-10-20\"\n---\n\n## Key Concepts Learned\n\nWhen use tigris or tidycensus functions, they show download progress by default. \n\n::: {.cell}\n\n:::\n\n\n*Model Errors*\n\nRandom errors(good)\n\n- No systematic pattern\n- Scattered across space\n- Prediction equally good everywhere\n- Model captures key relationships\n\nClustered errors(bad)\n\n- Spatial pattern visible\n- Under/over-predict in areas\n- Model misses something about location\n- Need more spatial features\n\n*Defining \"Neighbors\"*\n\nContiguity\n\n- Polygons that shares a border\n- Queen vs. Rook\n\nDistance\n\n- All within X meters\n- Fixed threshold\n\nk-Nearest\n\n- Closest k points\n- Adaptive distance\n\n*Moran's I*\n\nIf moran's high (errors clustered)\n\n1. Add more spatial features\n\n- Try different buffer sizes\n- Include more amenities/disamenities\n- Create neighborhood-specific variables\n\n2. Try spatial fixed effects\n\n- Neighborhood dummies\n- Grid cell dummies\n\n3. Consider spatial regression models\n\n- Spatial lag model\n- Spatial error model\n\n\n## Coding Techniques\n\nCreate the spatial lag of error scatter plot\n\nlibrary(spdep)\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
